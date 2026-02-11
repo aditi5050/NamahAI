@@ -74,10 +74,10 @@ export default function ExploreWorkflows() {
                         <div className="slider-tall_img rounded">
                           <img
                             loading="lazy"
-                            src="https:/https://cdn.prod.website-files.com/681b040781d5b5e278a69989/681f925d9ecbfaf69c5dc15e_Workflow%2001.avif"
+                            src="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/681f925d9ecbfaf69c5dc15e_Workflow%2001.avif"
                             alt=""
                             sizes="(max-width: 840px) 100vw, 840px"
-                            srcSet="https:/https://cdn.prod.website-files.com/681b040781d5b5e278a69989/681f925d9ecbfaf69c5dc15e_Workflow%2001.avif 500w, https:/https://cdn.prod.website-files.com/681b040781d5b5e278a69989/681f925d9ecbfaf69c5dc15e_Workflow%2001.avif 800w, https:/https://cdn.prod.website-files.com/681b040781d5b5e278a69989/681f925d9ecbfaf69c5dc15e_Workflow%2001.avif 840w"
+                            srcSet="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/681f925d9ecbfaf69c5dc15e_Workflow%2001.avif 500w, https://cdn.prod.website-files.com/681b040781d5b5e278a69989/681f925d9ecbfaf69c5dc15e_Workflow%2001.avif 800w, https://cdn.prod.website-files.com/681b040781d5b5e278a69989/681f925d9ecbfaf69c5dc15e_Workflow%2001.avif 840w"
                             className="slider-tall_photo"
                           />
                           <a
@@ -98,10 +98,10 @@ export default function ExploreWorkflows() {
                         <div className="slider-tall_img rounded">
                           <img
                             loading="lazy"
-                            src="https:/https://cdn.prod.website-files.com/681b040781d5b5e278a69989/681f925d9ecbfaf69c5dc164_Workflow%2003.avif"
+                            src="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/681f925d9ecbfaf69c5dc164_Workflow%2003.avif"
                             alt=""
                             sizes="(max-width: 991px) 100vw, 926.0999755859375px"
-                            srcSet="https:/https://cdn.prod.website-files.com/681b040781d5b5e278a69989/681f925d9ecbfaf69c5dc164_Workflow%2003.avif 500w, https:/https://cdn.prod.website-files.com/681b040781d5b5e278a69989/681f925d9ecbfaf69c5dc164_Workflow%2003.avif 800w, https:/https://cdn.prod.website-files.com/681b040781d5b5e278a69989/681f925d9ecbfaf69c5dc164_Workflow%2003.avif 840w"
+                            srcSet="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/681f925d9ecbfaf69c5dc164_Workflow%2003.avif 500w, https://cdn.prod.website-files.com/681b040781d5b5e278a69989/681f925d9ecbfaf69c5dc164_Workflow%2003.avif 800w, https://cdn.prod.website-files.com/681b040781d5b5e278a69989/681f925d9ecbfaf69c5dc164_Workflow%2003.avif 840w"
                             className="slider-tall_photo"
                           />
                           <a
@@ -124,10 +124,10 @@ export default function ExploreWorkflows() {
                         <div className="slider-tall_img rounded">
                           <img
                             loading="lazy"
-                            src="https:/https://cdn.prod.website-files.com/681b040781d5b5e278a69989/681f925d9ecbfaf69c5dc16a_Workflow%2002.avif"
+                            src="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/681f925d9ecbfaf69c5dc16a_Workflow%2002.avif"
                             alt=""
                             sizes="(max-width: 840px) 100vw, 840px"
-                            srcSet="https:/https://cdn.prod.website-files.com/681b040781d5b5e278a69989/681f925d9ecbfaf69c5dc16a_Workflow%2002.avif 500w, https:/https://cdn.prod.website-files.com/681b040781d5b5e278a69989/681f925d9ecbfaf69c5dc16a_Workflow%2002.avif 800w, https:/https://cdn.prod.website-files.com/681b040781d5b5e278a69989/681f925d9ecbfaf69c5dc16a_Workflow%2002.avif 840w"
+                            srcSet="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/681f925d9ecbfaf69c5dc16a_Workflow%2002.avif 500w, https://cdn.prod.website-files.com/681b040781d5b5e278a69989/681f925d9ecbfaf69c5dc16a_Workflow%2002.avif 800w, https://cdn.prod.website-files.com/681b040781d5b5e278a69989/681f925d9ecbfaf69c5dc16a_Workflow%2002.avif 840w"
                             className="slider-tall_photo"
                           />
                           <a
@@ -150,10 +150,10 @@ export default function ExploreWorkflows() {
                         <div className="slider-tall_img rounded">
                           <img
                             loading="lazy"
-                            src="https:/https://cdn.prod.website-files.com/681b040781d5b5e278a69989/681f925d9ecbfaf69c5dc170_Workflow%2004.avif"
+                            src="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/681f925d9ecbfaf69c5dc170_Workflow%2004.avif"
                             alt=""
                             sizes="(max-width: 840px) 100vw, 840px"
-                            srcSet="https:/https://cdn.prod.website-files.com/681b040781d5b5e278a69989/681f925d9ecbfaf69c5dc170_Workflow%2004.avif 500w, https:/https://cdn.prod.website-files.com/681b040781d5b5e278a69989/681f925d9ecbfaf69c5dc170_Workflow%2004.avif 800w, https:/https://cdn.prod.website-files.com/681b040781d5b5e278a69989/681f925d9ecbfaf69c5dc170_Workflow%2004.avif 840w"
+                            srcSet="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/681f925d9ecbfaf69c5dc170_Workflow%2004.avif 500w, https://cdn.prod.website-files.com/681b040781d5b5e278a69989/681f925d9ecbfaf69c5dc170_Workflow%2004.avif 800w, https://cdn.prod.website-files.com/681b040781d5b5e278a69989/681f925d9ecbfaf69c5dc170_Workflow%2004.avif 840w"
                             className="slider-tall_photo"
                           />
                           <a
@@ -174,10 +174,10 @@ export default function ExploreWorkflows() {
                         <div className="slider-tall_img rounded">
                           <img
                             loading="lazy"
-                            src="https:/https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6825b0ac314fefe464791808_Relight%202.0%20human.avif"
+                            src="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6825b0ac314fefe464791808_Relight%202.0%20human.avif"
                             alt=""
                             sizes="(max-width: 840px) 100vw, 840px"
-                            srcSet="https:/https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6825b0ac314fefe464791808_Relight%202.0%20human-p-500.avif 500w, https:/https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6825b0ac314fefe464791808_Relight%202.0%20human-p-800.avif 800w, https:/https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6825b0ac314fefe464791808_Relight%202.0%20human.avif 840w"
+                            srcSet="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6825b0ac314fefe464791808_Relight%202.0%20human-p-500.avif 500w, https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6825b0ac314fefe464791808_Relight%202.0%20human-p-800.avif 800w, https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6825b0ac314fefe464791808_Relight%202.0%20human.avif 840w"
                             className="slider-tall_photo"
                           />
                           <a
@@ -198,10 +198,10 @@ export default function ExploreWorkflows() {
                         <div className="slider-tall_img rounded">
                           <img
                             loading="lazy"
-                            src="https:/https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6825b0acdb693fa2102f0af2_Weavy%20Logo.avif"
+                            src="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6825b0acdb693fa2102f0af2_Weavy%20Logo.avif"
                             alt=""
                             sizes="(max-width: 840px) 100vw, 840px"
-                            srcSet="https:/https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6825b0acdb693fa2102f0af2_Weavy%20Logo-p-500.avif 500w, https:/https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6825b0acdb693fa2102f0af2_Weavy%20Logo-p-800.avif 800w, https:/https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6825b0acdb693fa2102f0af2_Weavy%20Logo.avif 840w"
+                            srcSet="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6825b0acdb693fa2102f0af2_Weavy%20Logo-p-500.avif 500w, https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6825b0acdb693fa2102f0af2_Weavy%20Logo-p-800.avif 800w, https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6825b0acdb693fa2102f0af2_Weavy%20Logo.avif 840w"
                             className="slider-tall_photo"
                           />
                           <a
@@ -222,10 +222,10 @@ export default function ExploreWorkflows() {
                         <div className="slider-tall_img rounded">
                           <img
                             loading="lazy"
-                            src="https:/https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6825b0ac04c55a803826a6e5_Relight%20-%20Product.avif"
+                            src="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6825b0ac04c55a803826a6e5_Relight%20-%20Product.avif"
                             alt=""
                             sizes="(max-width: 840px) 100vw, 840px"
-                            srcSet="https:/https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6825b0ac04c55a803826a6e5_Relight%20-%20Product-p-500.avif 500w, https:/https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6825b0ac04c55a803826a6e5_Relight%20-%20Product-p-800.avif 800w, https:/https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6825b0ac04c55a803826a6e5_Relight%20-%20Product.avif 840w"
+                            srcSet="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6825b0ac04c55a803826a6e5_Relight%20-%20Product-p-500.avif 500w, https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6825b0ac04c55a803826a6e5_Relight%20-%20Product-p-800.avif 800w, https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6825b0ac04c55a803826a6e5_Relight%20-%20Product.avif 840w"
                             className="slider-tall_photo"
                           />
                           <a
@@ -246,10 +246,10 @@ export default function ExploreWorkflows() {
                         <div className="slider-tall_img rounded">
                           <img
                             loading="lazy"
-                            src="https:/https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6825b0acc901ee5c718efc90_Wan%20Lora%20-%20Rotate.avif"
+                            src="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6825b0acc901ee5c718efc90_Wan%20Lora%20-%20Rotate.avif"
                             alt=""
                             sizes="(max-width: 840px) 100vw, 840px"
-                            srcSet="https:/https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6825b0acc901ee5c718efc90_Wan%20Lora%20-%20Rotate-p-500.avif 500w, https:/https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6825b0acc901ee5c718efc90_Wan%20Lora%20-%20Rotate-p-800.avif 800w, https:/https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6825b0acc901ee5c718efc90_Wan%20Lora%20-%20Rotate.avif 840w"
+                            srcSet="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6825b0acc901ee5c718efc90_Wan%20Lora%20-%20Rotate-p-500.avif 500w, https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6825b0acc901ee5c718efc90_Wan%20Lora%20-%20Rotate-p-800.avif 800w, https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6825b0acc901ee5c718efc90_Wan%20Lora%20-%20Rotate.avif 840w"
                             className="slider-tall_photo"
                           />
                           <a

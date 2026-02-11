@@ -5,7 +5,7 @@ export default function Footer() {
     <footer data-wf--footer--variant="base" className="footer">
       <div className="footer_main-content">
         <img
-          src="https:/https://cdn.prod.website-files.com/681b040781d5b5e278a69989/682231a73b5be7ff98f935ac_footer%20Node.svg"
+          src="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/682231a73b5be7ff98f935ac_footer%20Node.svg"
           loading="lazy"
           alt=""
           className="footer_node-to-cta"
@@ -32,13 +32,13 @@ export default function Footer() {
             className="footer_logo-link w-inline-block w--current"
           >
             <img
-              src="https:/https://cdn.prod.website-files.com/681b040781d5b5e278a69989/68222dc898cffdbd87733f23_footer-logo%2Btagline%20DESKTOP.svg"
+              src="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/68222dc898cffdbd87733f23_footer-logo%2Btagline%20DESKTOP.svg"
               loading="lazy"
               alt=""
               className="image-footer-logo-tagline-dsktp"
             />
             <img
-              src="https:/https://cdn.prod.website-files.com/681b040781d5b5e278a69989/682b76283538127bf3907ded_Frame%20427321089.svg"
+              src="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/682b76283538127bf3907ded_Frame%20427321089.svg"
               loading="lazy"
               id="w-node-_31432034-0b36-b686-cc06-99afd84341f6-d84341ea"
               alt=""
@@ -200,7 +200,7 @@ export default function Footer() {
         </div>
         <div className="footer_bottom-badges">
           <img
-            src="https:/https://cdn.prod.website-files.com/681b040781d5b5e278a69989/69398e51b66cfd37e959fee4_image-SOC2_weavy.avif"
+            src="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/69398e51b66cfd37e959fee4_image-SOC2_weavy.avif"
             loading="lazy"
             width="Auto"
             height="Auto"
@@ -230,7 +230,7 @@ export default function Footer() {
       >
         <div> Start Now</div>
         <img
-          src="https:/https://cdn.prod.website-files.com/681b040781d5b5e278a69989/682232b5585964c7515fba3b_nore-dot.svg"
+          src="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/682232b5585964c7515fba3b_nore-dot.svg"
           loading="lazy"
           alt=""
           className="image_footer-cta-node"
