@@ -164,103 +164,103 @@ export default function ProfessionalTools() {
                 <div className="prof-tools-interactionable-wrapper">
                   <div className="prof_center-image-wrapp">
                     <img
-                      src="/cdn.prod.website-files.com/681b040781d5b5e278a69989/68223c9e9705b88c35e76dec_Default%402x.avif"
+                      src="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/68223c9e9705b88c35e76dec_Default%402x.avif"
                       loading="lazy"
                       sizes="(max-width: 2880px) 100vw, 2880px"
-                      srcSet="/cdn.prod.website-files.com/681b040781d5b5e278a69989/68223c9e9705b88c35e76dec_Default%402x-p-500.png 500w, /cdn.prod.website-files.com/681b040781d5b5e278a69989/68223c9e9705b88c35e76dec_Default%402x-p-800.png 800w, /cdn.prod.website-files.com/681b040781d5b5e278a69989/68223c9e9705b88c35e76dec_Default%402x.avif 2880w"
+                      srcSet="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/68223c9e9705b88c35e76dec_Default%402x-p-500.png 500w, https://cdn.prod.website-files.com/681b040781d5b5e278a69989/68223c9e9705b88c35e76dec_Default%402x-p-800.png 800w, https://cdn.prod.website-files.com/681b040781d5b5e278a69989/68223c9e9705b88c35e76dec_Default%402x.avif 2880w"
                       alt=""
                       className="image-tools-inner is-default"
                     />
                     <img
-                      src="/cdn.prod.website-files.com/681b040781d5b5e278a69989/68224564b78bd840120b7a38_Blur%402x.avif"
+                      src="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/68224564b78bd840120b7a38_Blur%402x.avif"
                       loading="lazy"
                       sizes="(max-width: 2880px) 100vw, 2880px"
-                      srcSet="/cdn.prod.website-files.com/681b040781d5b5e278a69989/68224564b78bd840120b7a38_Blur%402x-p-500.avif 500w, /cdn.prod.website-files.com/681b040781d5b5e278a69989/68224564b78bd840120b7a38_Blur%402x-p-800.avif 800w, /cdn.prod.website-files.com/681b040781d5b5e278a69989/68224564b78bd840120b7a38_Blur%402x.avif 2880w"
+                      srcSet="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/68224564b78bd840120b7a38_Blur%402x-p-500.avif 500w, https://cdn.prod.website-files.com/681b040781d5b5e278a69989/68224564b78bd840120b7a38_Blur%402x-p-800.avif 800w, https://cdn.prod.website-files.com/681b040781d5b5e278a69989/68224564b78bd840120b7a38_Blur%402x.avif 2880w"
                       alt=""
                       className="image-tools-inner is-blur"
                     />
                     <img
-                      src="/cdn.prod.website-files.com/681b040781d5b5e278a69989/68224563d93b3ce65b54f07b_Invert%402x.avif"
+                      src="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/68224563d93b3ce65b54f07b_Invert%402x.avif"
                       loading="lazy"
                       sizes="(max-width: 2880px) 100vw, 2880px"
-                      srcSet="/cdn.prod.website-files.com/681b040781d5b5e278a69989/68224563d93b3ce65b54f07b_Invert%402x-p-500.avif 500w, /cdn.prod.website-files.com/681b040781d5b5e278a69989/68224563d93b3ce65b54f07b_Invert%402x-p-800.avif 800w, /cdn.prod.website-files.com/681b040781d5b5e278a69989/68224563d93b3ce65b54f07b_Invert%402x-p-1080.avif 1080w, /cdn.prod.website-files.com/681b040781d5b5e278a69989/68224563d93b3ce65b54f07b_Invert%402x-p-1600.avif 1600w, /cdn.prod.website-files.com/681b040781d5b5e278a69989/68224563d93b3ce65b54f07b_Invert%402x.avif 2880w"
+                      srcSet="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/68224563d93b3ce65b54f07b_Invert%402x-p-500.avif 500w, https://cdn.prod.website-files.com/681b040781d5b5e278a69989/68224563d93b3ce65b54f07b_Invert%402x-p-800.avif 800w, https://cdn.prod.website-files.com/681b040781d5b5e278a69989/68224563d93b3ce65b54f07b_Invert%402x-p-1080.avif 1080w, https://cdn.prod.website-files.com/681b040781d5b5e278a69989/68224563d93b3ce65b54f07b_Invert%402x-p-1600.avif 1600w, https://cdn.prod.website-files.com/681b040781d5b5e278a69989/68224563d93b3ce65b54f07b_Invert%402x.avif 2880w"
                       alt=""
                       className="image-tools-inner is-invert"
                     />
                     <img
-                      src="/cdn.prod.website-files.com/681b040781d5b5e278a69989/68224563af147b5d7c2496ff_Crop%402x.avif"
+                      src="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/68224563af147b5d7c2496ff_Crop%402x.avif"
                       loading="lazy"
                       sizes="(max-width: 2880px) 100vw, 2880px"
-                      srcSet="/cdn.prod.website-files.com/681b040781d5b5e278a69989/68224563af147b5d7c2496ff_Crop%402x-p-500.avif 500w, /cdn.prod.website-files.com/681b040781d5b5e278a69989/68224563af147b5d7c2496ff_Crop%402x-p-800.avif 800w, /cdn.prod.website-files.com/681b040781d5b5e278a69989/68224563af147b5d7c2496ff_Crop%402x-p-1080.avif 1080w, /cdn.prod.website-files.com/681b040781d5b5e278a69989/68224563af147b5d7c2496ff_Crop%402x-p-1600.avif 1600w, /cdn.prod.website-files.com/681b040781d5b5e278a69989/68224563af147b5d7c2496ff_Crop%402x.avif 2880w"
+                      srcSet="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/68224563af147b5d7c2496ff_Crop%402x-p-500.avif 500w, https://cdn.prod.website-files.com/681b040781d5b5e278a69989/68224563af147b5d7c2496ff_Crop%402x-p-800.avif 800w, https://cdn.prod.website-files.com/681b040781d5b5e278a69989/68224563af147b5d7c2496ff_Crop%402x-p-1080.avif 1080w, https://cdn.prod.website-files.com/681b040781d5b5e278a69989/68224563af147b5d7c2496ff_Crop%402x-p-1600.avif 1600w, https://cdn.prod.website-files.com/681b040781d5b5e278a69989/68224563af147b5d7c2496ff_Crop%402x.avif 2880w"
                       alt=""
                       className="image-tools-inner is-crop"
                     />
                     <img
-                      src="/cdn.prod.website-files.com/681b040781d5b5e278a69989/68224563d5cb54c747f189ae_Mask%402x.avif"
+                      src="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/68224563d5cb54c747f189ae_Mask%402x.avif"
                       loading="lazy"
                       sizes="(max-width: 2880px) 100vw, 2880px"
-                      srcSet="/cdn.prod.website-files.com/681b040781d5b5e278a69989/68224563d5cb54c747f189ae_Mask%402x-p-500.avif 500w, /cdn.prod.website-files.com/681b040781d5b5e278a69989/68224563d5cb54c747f189ae_Mask%402x-p-800.avif 800w, /cdn.prod.website-files.com/681b040781d5b5e278a69989/68224563d5cb54c747f189ae_Mask%402x-p-1080.avif 1080w, /cdn.prod.website-files.com/681b040781d5b5e278a69989/68224563d5cb54c747f189ae_Mask%402x-p-1600.avif 1600w, /cdn.prod.website-files.com/681b040781d5b5e278a69989/68224563d5cb54c747f189ae_Mask%402x-p-2000.avif 2000w, /cdn.prod.website-files.com/681b040781d5b5e278a69989/68224563d5cb54c747f189ae_Mask%402x.avif 2880w"
+                      srcSet="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/68224563d5cb54c747f189ae_Mask%402x-p-500.avif 500w, https://cdn.prod.website-files.com/681b040781d5b5e278a69989/68224563d5cb54c747f189ae_Mask%402x-p-800.avif 800w, https://cdn.prod.website-files.com/681b040781d5b5e278a69989/68224563d5cb54c747f189ae_Mask%402x-p-1080.avif 1080w, https://cdn.prod.website-files.com/681b040781d5b5e278a69989/68224563d5cb54c747f189ae_Mask%402x-p-1600.avif 1600w, https://cdn.prod.website-files.com/681b040781d5b5e278a69989/68224563d5cb54c747f189ae_Mask%402x-p-2000.avif 2000w, https://cdn.prod.website-files.com/681b040781d5b5e278a69989/68224563d5cb54c747f189ae_Mask%402x.avif 2880w"
                       alt=""
                       className="image-tools-inner is-mask-extractor"
                     />
                     <img
-                      src="/cdn.prod.website-files.com/681b040781d5b5e278a69989/682245639e16941f61edcc06_Inpaint%402x.avif"
+                      src="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/682245639e16941f61edcc06_Inpaint%402x.avif"
                       loading="lazy"
                       sizes="(max-width: 2880px) 100vw, 2880px"
-                      srcSet="/cdn.prod.website-files.com/681b040781d5b5e278a69989/682245639e16941f61edcc06_Inpaint%402x-p-500.avif 500w, /cdn.prod.website-files.com/681b040781d5b5e278a69989/682245639e16941f61edcc06_Inpaint%402x-p-800.avif 800w, /cdn.prod.website-files.com/681b040781d5b5e278a69989/682245639e16941f61edcc06_Inpaint%402x-p-1080.avif 1080w, /cdn.prod.website-files.com/681b040781d5b5e278a69989/682245639e16941f61edcc06_Inpaint%402x.avif 2880w"
+                      srcSet="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/682245639e16941f61edcc06_Inpaint%402x-p-500.avif 500w, https://cdn.prod.website-files.com/681b040781d5b5e278a69989/682245639e16941f61edcc06_Inpaint%402x-p-800.avif 800w, https://cdn.prod.website-files.com/681b040781d5b5e278a69989/682245639e16941f61edcc06_Inpaint%402x-p-1080.avif 1080w, https://cdn.prod.website-files.com/681b040781d5b5e278a69989/682245639e16941f61edcc06_Inpaint%402x.avif 2880w"
                       alt=""
                       className="image-tools-inner is-inpaint"
                     />
                     <img
-                      src="/cdn.prod.website-files.com/681b040781d5b5e278a69989/682245634dee7dac1dc3ac42_Painter%402x.avif"
+                      src="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/682245634dee7dac1dc3ac42_Painter%402x.avif"
                       loading="lazy"
                       sizes="(max-width: 2880px) 100vw, 2880px"
-                      srcSet="/cdn.prod.website-files.com/681b040781d5b5e278a69989/682245634dee7dac1dc3ac42_Painter%402x-p-500.avif 500w, /cdn.prod.website-files.com/681b040781d5b5e278a69989/682245634dee7dac1dc3ac42_Painter%402x-p-800.avif 800w, /cdn.prod.website-files.com/681b040781d5b5e278a69989/682245634dee7dac1dc3ac42_Painter%402x-p-1080.avif 1080w, /cdn.prod.website-files.com/681b040781d5b5e278a69989/682245634dee7dac1dc3ac42_Painter%402x-p-1600.avif 1600w, /cdn.prod.website-files.com/681b040781d5b5e278a69989/682245634dee7dac1dc3ac42_Painter%402x-p-2000.avif 2000w, /cdn.prod.website-files.com/681b040781d5b5e278a69989/682245634dee7dac1dc3ac42_Painter%402x.avif 2880w"
+                      srcSet="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/682245634dee7dac1dc3ac42_Painter%402x-p-500.avif 500w, https://cdn.prod.website-files.com/681b040781d5b5e278a69989/682245634dee7dac1dc3ac42_Painter%402x-p-800.avif 800w, https://cdn.prod.website-files.com/681b040781d5b5e278a69989/682245634dee7dac1dc3ac42_Painter%402x-p-1080.avif 1080w, https://cdn.prod.website-files.com/681b040781d5b5e278a69989/682245634dee7dac1dc3ac42_Painter%402x-p-1600.avif 1600w, https://cdn.prod.website-files.com/681b040781d5b5e278a69989/682245634dee7dac1dc3ac42_Painter%402x-p-2000.avif 2000w, https://cdn.prod.website-files.com/681b040781d5b5e278a69989/682245634dee7dac1dc3ac42_Painter%402x.avif 2880w"
                       alt=""
                       className="image-tools-inner is-painter"
                     />
                     <img
-                      src="/cdn.prod.website-files.com/681b040781d5b5e278a69989/68224563b4846eaa2d70f69e_Relight%402x.avif"
+                      src="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/68224563b4846eaa2d70f69e_Relight%402x.avif"
                       loading="lazy"
                       sizes="(max-width: 2880px) 100vw, 2880px"
-                      srcSet="/cdn.prod.website-files.com/681b040781d5b5e278a69989/68224563b4846eaa2d70f69e_Relight%402x-p-500.avif 500w, /cdn.prod.website-files.com/681b040781d5b5e278a69989/68224563b4846eaa2d70f69e_Relight%402x-p-800.avif 800w, /cdn.prod.website-files.com/681b040781d5b5e278a69989/68224563b4846eaa2d70f69e_Relight%402x-p-1080.avif 1080w, /cdn.prod.website-files.com/681b040781d5b5e278a69989/68224563b4846eaa2d70f69e_Relight%402x-p-1600.avif 1600w, /cdn.prod.website-files.com/681b040781d5b5e278a69989/68224563b4846eaa2d70f69e_Relight%402x.avif 2880w"
+                      srcSet="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/68224563b4846eaa2d70f69e_Relight%402x-p-500.avif 500w, https://cdn.prod.website-files.com/681b040781d5b5e278a69989/68224563b4846eaa2d70f69e_Relight%402x-p-800.avif 800w, https://cdn.prod.website-files.com/681b040781d5b5e278a69989/68224563b4846eaa2d70f69e_Relight%402x-p-1080.avif 1080w, https://cdn.prod.website-files.com/681b040781d5b5e278a69989/68224563b4846eaa2d70f69e_Relight%402x-p-1600.avif 1600w, https://cdn.prod.website-files.com/681b040781d5b5e278a69989/68224563b4846eaa2d70f69e_Relight%402x.avif 2880w"
                       alt=""
                       className="image-tools-inner is-relight"
                     />
                     <img
-                      src="/cdn.prod.website-files.com/681b040781d5b5e278a69989/682245638e6550c59d0bce8f_Upscale%402x.avif"
+                      src="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/682245638e6550c59d0bce8f_Upscale%402x.avif"
                       loading="lazy"
                       sizes="(max-width: 2880px) 100vw, 2880px"
-                      srcSet="/cdn.prod.website-files.com/681b040781d5b5e278a69989/682245638e6550c59d0bce8f_Upscale%402x-p-500.avif 500w, /cdn.prod.website-files.com/681b040781d5b5e278a69989/682245638e6550c59d0bce8f_Upscale%402x-p-800.avif 800w, /cdn.prod.website-files.com/681b040781d5b5e278a69989/682245638e6550c59d0bce8f_Upscale%402x-p-1080.avif 1080w, /cdn.prod.website-files.com/681b040781d5b5e278a69989/682245638e6550c59d0bce8f_Upscale%402x-p-1600.avif 1600w, /cdn.prod.website-files.com/681b040781d5b5e278a69989/682245638e6550c59d0bce8f_Upscale%402x.avif 2880w"
+                      srcSet="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/682245638e6550c59d0bce8f_Upscale%402x-p-500.avif 500w, https://cdn.prod.website-files.com/681b040781d5b5e278a69989/682245638e6550c59d0bce8f_Upscale%402x-p-800.avif 800w, https://cdn.prod.website-files.com/681b040781d5b5e278a69989/682245638e6550c59d0bce8f_Upscale%402x-p-1080.avif 1080w, https://cdn.prod.website-files.com/681b040781d5b5e278a69989/682245638e6550c59d0bce8f_Upscale%402x-p-1600.avif 1600w, https://cdn.prod.website-files.com/681b040781d5b5e278a69989/682245638e6550c59d0bce8f_Upscale%402x.avif 2880w"
                       alt=""
                       className="image-tools-inner is-upscale"
                     />
                     <img
-                      src="/cdn.prod.website-files.com/681b040781d5b5e278a69989/68224563290cc77eba8f086a_z%20depth%402x.avif"
+                      src="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/68224563290cc77eba8f086a_z%20depth%402x.avif"
                       loading="lazy"
                       sizes="(max-width: 2880px) 100vw, 2880px"
-                      srcSet="/cdn.prod.website-files.com/681b040781d5b5e278a69989/68224563290cc77eba8f086a_z%20depth%402x-p-500.avif 500w, /cdn.prod.website-files.com/681b040781d5b5e278a69989/68224563290cc77eba8f086a_z%20depth%402x-p-800.avif 800w, /cdn.prod.website-files.com/681b040781d5b5e278a69989/68224563290cc77eba8f086a_z%20depth%402x.avif 2880w"
+                      srcSet="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/68224563290cc77eba8f086a_z%20depth%402x-p-500.avif 500w, https://cdn.prod.website-files.com/681b040781d5b5e278a69989/68224563290cc77eba8f086a_z%20depth%402x-p-800.avif 800w, https://cdn.prod.website-files.com/681b040781d5b5e278a69989/68224563290cc77eba8f086a_z%20depth%402x.avif 2880w"
                       alt=""
                       className="image-tools-inner is-zdepth"
                     />
                     <img
-                      src="/cdn.prod.website-files.com/681b040781d5b5e278a69989/682245646909d06ed8a17f4d_Channels%402x.avif"
+                      src="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/682245646909d06ed8a17f4d_Channels%402x.avif"
                       loading="lazy"
                       sizes="(max-width: 2880px) 100vw, 2880px"
-                      srcSet="/cdn.prod.website-files.com/681b040781d5b5e278a69989/682245646909d06ed8a17f4d_Channels%402x-p-500.avif 500w, /cdn.prod.website-files.com/681b040781d5b5e278a69989/682245646909d06ed8a17f4d_Channels%402x-p-800.avif 800w, /cdn.prod.website-files.com/681b040781d5b5e278a69989/682245646909d06ed8a17f4d_Channels%402x-p-1080.avif 1080w, /cdn.prod.website-files.com/681b040781d5b5e278a69989/682245646909d06ed8a17f4d_Channels%402x-p-1600.avif 1600w, /cdn.prod.website-files.com/681b040781d5b5e278a69989/682245646909d06ed8a17f4d_Channels%402x.avif 2880w"
+                      srcSet="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/682245646909d06ed8a17f4d_Channels%402x-p-500.avif 500w, https://cdn.prod.website-files.com/681b040781d5b5e278a69989/682245646909d06ed8a17f4d_Channels%402x-p-800.avif 800w, https://cdn.prod.website-files.com/681b040781d5b5e278a69989/682245646909d06ed8a17f4d_Channels%402x-p-1080.avif 1080w, https://cdn.prod.website-files.com/681b040781d5b5e278a69989/682245646909d06ed8a17f4d_Channels%402x-p-1600.avif 1600w, https://cdn.prod.website-files.com/681b040781d5b5e278a69989/682245646909d06ed8a17f4d_Channels%402x.avif 2880w"
                       alt=""
                       className="image-tools-inner is-channels"
                     />
                     <img
-                      src="/cdn.prod.website-files.com/681b040781d5b5e278a69989/6822456436dd3ce4b39b6372_Outpaint%402x.avif"
+                      src="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6822456436dd3ce4b39b6372_Outpaint%402x.avif"
                       loading="lazy"
                       sizes="(max-width: 2880px) 100vw, 2880px"
-                      srcSet="/cdn.prod.website-files.com/681b040781d5b5e278a69989/6822456436dd3ce4b39b6372_Outpaint%402x-p-500.avif 500w, /cdn.prod.website-files.com/681b040781d5b5e278a69989/6822456436dd3ce4b39b6372_Outpaint%402x-p-800.avif 800w, /cdn.prod.website-files.com/681b040781d5b5e278a69989/6822456436dd3ce4b39b6372_Outpaint%402x-p-1080.avif 1080w, /cdn.prod.website-files.com/681b040781d5b5e278a69989/6822456436dd3ce4b39b6372_Outpaint%402x.avif 2880w"
+                      srcSet="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6822456436dd3ce4b39b6372_Outpaint%402x-p-500.avif 500w, https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6822456436dd3ce4b39b6372_Outpaint%402x-p-800.avif 800w, https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6822456436dd3ce4b39b6372_Outpaint%402x-p-1080.avif 1080w, https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6822456436dd3ce4b39b6372_Outpaint%402x.avif 2880w"
                       alt=""
                       className="image-tools-inner is-outpaint"
                     />
                     <img
-                      src="/cdn.prod.website-files.com/681b040781d5b5e278a69989/6825ab42a8f361a9518d5a7f_Image%20describer%402x.avif"
+                      src="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6825ab42a8f361a9518d5a7f_Image%20describer%402x.avif"
                       loading="lazy"
                       alt=""
                       className="image-tools-inner is-image-describer"
@@ -334,7 +334,7 @@ export default function ProfessionalTools() {
                     <div className="slider-pill_img">
                       <img
                         loading="lazy"
-                        src="/cdn.prod.website-files.com/681b040781d5b5e278a69989/6836e7885ff7357d922037c4_default_mobile.avif"
+                        src="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6836e7885ff7357d922037c4_default_mobile.avif"
                         alt=""
                         className="slider-pill_photo"
                       />
@@ -346,7 +346,7 @@ export default function ProfessionalTools() {
                     <div className="slider-pill_img">
                       <img
                         loading="lazy"
-                        src="/cdn.prod.website-files.com/681b040781d5b5e278a69989/6836e788be2ac396b9541c65_describer_mobile.avif"
+                        src="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6836e788be2ac396b9541c65_describer_mobile.avif"
                         alt=""
                         className="slider-pill_photo"
                       />
@@ -358,47 +358,7 @@ export default function ProfessionalTools() {
                     <div className="slider-pill_img">
                       <img
                         loading="lazy"
-                        src="/cdn.prod.website-files.com/681b040781d5b5e278a69989/6836e78866ed64acde74b76f_outpaint_mobile.avif"
-                        alt=""
-                        className="slider-pill_photo"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className="splide__slide">
-                  <div className="slider-pill">
-                    <div className="slider-pill_img">
-                      <img
-                        sizes="(max-width: 780px) 100vw, 780px"
-                        srcSet="/cdn.prod.website-files.com/681b040781d5b5e278a69989/6836e788cefffba35a0c82c7_channels_mobile-p-500.avif 500w, /cdn.prod.website-files.com/681b040781d5b5e278a69989/6836e788cefffba35a0c82c7_channels_mobile.avif 780w"
-                        alt=""
-                        src="/cdn.prod.website-files.com/681b040781d5b5e278a69989/6836e788cefffba35a0c82c7_channels_mobile.avif"
-                        loading="lazy"
-                        className="slider-pill_photo"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className="splide__slide">
-                  <div className="slider-pill">
-                    <div className="slider-pill_img">
-                      <img
-                        sizes="(max-width: 780px) 100vw, 780px"
-                        srcSet="/cdn.prod.website-files.com/681b040781d5b5e278a69989/6836e7884430f4f3b0c734c6_upscale_mobile-p-500.avif 500w, /cdn.prod.website-files.com/681b040781d5b5e278a69989/6836e7884430f4f3b0c734c6_upscale_mobile.avif 780w"
-                        alt=""
-                        src="/cdn.prod.website-files.com/681b040781d5b5e278a69989/6836e7884430f4f3b0c734c6_upscale_mobile.avif"
-                        loading="lazy"
-                        className="slider-pill_photo"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className="splide__slide">
-                  <div className="slider-pill">
-                    <div className="slider-pill_img">
-                      <img
-                        loading="lazy"
-                        src="/cdn.prod.website-files.com/681b040781d5b5e278a69989/6836e788ab51aaa475d32e51_zdepth_mobile.avif"
+                        src="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6836e78866ed64acde74b76f_outpaint_mobile.avif"
                         alt=""
                         className="slider-pill_photo"
                       />
@@ -410,9 +370,9 @@ export default function ProfessionalTools() {
                     <div className="slider-pill_img">
                       <img
                         sizes="(max-width: 780px) 100vw, 780px"
-                        srcSet="/cdn.prod.website-files.com/681b040781d5b5e278a69989/6836e7885d8ba650e91f8316_relight_mobile-p-500.avif 500w, /cdn.prod.website-files.com/681b040781d5b5e278a69989/6836e7885d8ba650e91f8316_relight_mobile.avif 780w"
+                        srcSet="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6836e788cefffba35a0c82c7_channels_mobile-p-500.avif 500w, https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6836e788cefffba35a0c82c7_channels_mobile.avif 780w"
                         alt=""
-                        src="/cdn.prod.website-files.com/681b040781d5b5e278a69989/6836e7885d8ba650e91f8316_relight_mobile.avif"
+                        src="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6836e788cefffba35a0c82c7_channels_mobile.avif"
                         loading="lazy"
                         className="slider-pill_photo"
                       />
@@ -424,9 +384,35 @@ export default function ProfessionalTools() {
                     <div className="slider-pill_img">
                       <img
                         sizes="(max-width: 780px) 100vw, 780px"
-                        srcSet="/cdn.prod.website-files.com/681b040781d5b5e278a69989/6836e7880866814b85054b1a_paint_mobile-p-500.png 500w, /cdn.prod.website-files.com/681b040781d5b5e278a69989/6836e7880866814b85054b1a_paint_mobile.png 780w"
+                        srcSet="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6836e7884430f4f3b0c734c6_upscale_mobile-p-500.avif 500w, https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6836e7884430f4f3b0c734c6_upscale_mobile.avif 780w"
                         alt=""
-                        src="/cdn.prod.website-files.com/681b040781d5b5e278a69989/6836e7880866814b85054b1a_paint_mobile.png"
+                        src="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6836e7884430f4f3b0c734c6_upscale_mobile.avif"
+                        loading="lazy"
+                        className="slider-pill_photo"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div className="splide__slide">
+                  <div className="slider-pill">
+                    <div className="slider-pill_img">
+                      <img
+                        loading="lazy"
+                        src="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6836e788ab51aaa475d32e51_zdepth_mobile.avif"
+                        alt=""
+                        className="slider-pill_photo"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div className="splide__slide">
+                  <div className="slider-pill">
+                    <div className="slider-pill_img">
+                      <img
+                        sizes="(max-width: 780px) 100vw, 780px"
+                        srcSet="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6836e7885d8ba650e91f8316_relight_mobile-p-500.avif 500w, https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6836e7885d8ba650e91f8316_relight_mobile.avif 780w"
+                        alt=""
+                        src="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6836e7885d8ba650e91f8316_relight_mobile.avif"
                         loading="lazy"
                         className="slider-pill_photo"
                       />
@@ -438,9 +424,9 @@ export default function ProfessionalTools() {
                     <div className="slider-pill_img">
                       <img
                         sizes="(max-width: 780px) 100vw, 780px"
-                        srcSet="/cdn.prod.website-files.com/681b040781d5b5e278a69989/6836e7884f0847f3535d693c_crop_mobile-p-500.avif 500w, /cdn.prod.website-files.com/681b040781d5b5e278a69989/6836e7884f0847f3535d693c_crop_mobile.avif 780w"
+                        srcSet="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6836e7880866814b85054b1a_paint_mobile-p-500.png 500w, https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6836e7880866814b85054b1a_paint_mobile.png 780w"
                         alt=""
-                        src="/cdn.prod.website-files.com/681b040781d5b5e278a69989/6836e7884f0847f3535d693c_crop_mobile.avif"
+                        src="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6836e7880866814b85054b1a_paint_mobile.png"
                         loading="lazy"
                         className="slider-pill_photo"
                       />
@@ -452,9 +438,23 @@ export default function ProfessionalTools() {
                     <div className="slider-pill_img">
                       <img
                         sizes="(max-width: 780px) 100vw, 780px"
-                        srcSet="/cdn.prod.website-files.com/681b040781d5b5e278a69989/6836e7888d228f3f01ac4e1a_invert_mobile-p-500.avif 500w, /cdn.prod.website-files.com/681b040781d5b5e278a69989/6836e7888d228f3f01ac4e1a_invert_mobile.avif 780w"
+                        srcSet="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6836e7884f0847f3535d693c_crop_mobile-p-500.avif 500w, https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6836e7884f0847f3535d693c_crop_mobile.avif 780w"
                         alt=""
-                        src="/cdn.prod.website-files.com/681b040781d5b5e278a69989/6836e7888d228f3f01ac4e1a_invert_mobile.avif"
+                        src="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6836e7884f0847f3535d693c_crop_mobile.avif"
+                        loading="lazy"
+                        className="slider-pill_photo"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div className="splide__slide">
+                  <div className="slider-pill">
+                    <div className="slider-pill_img">
+                      <img
+                        sizes="(max-width: 780px) 100vw, 780px"
+                        srcSet="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6836e7888d228f3f01ac4e1a_invert_mobile-p-500.avif 500w, https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6836e7888d228f3f01ac4e1a_invert_mobile.avif 780w"
+                        alt=""
+                        src="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6836e7888d228f3f01ac4e1a_invert_mobile.avif"
                         loading="lazy"
                         className="slider-pill_photo"
                       />
@@ -466,7 +466,7 @@ export default function ProfessionalTools() {
                     <div className="slider-pill_img">
                       <img
                         loading="lazy"
-                        src="/cdn.prod.website-files.com/681b040781d5b5e278a69989/6836e7883a7cdd793a674313_inpaint_mobile.avif"
+                        src="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6836e7883a7cdd793a674313_inpaint_mobile.avif"
                         alt=""
                         className="slider-pill_photo"
                       />

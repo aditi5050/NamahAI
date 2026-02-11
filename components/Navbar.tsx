@@ -85,13 +85,13 @@ export default function Navbar() {
           className="brand w-nav-brand w--current"
         >
           <img
-            src="/cdn.prod.website-files.com/681b040781d5b5e278a69989/682350d42a7c97b440a58480_Nav%20left%20item%20-%20DESKTOP.svg"
+            src="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/682350d42a7c97b440a58480_Nav%20left%20item%20-%20DESKTOP.svg"
             loading="lazy"
             alt=""
             className="image_nav-logo-desktop"
           />
           <img
-            src="/cdn.prod.website-files.com/681b040781d5b5e278a69989/682350d42a7c97b440a58480_Nav%20left%20item%20-%20DESKTOP.svg"
+            src="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/682350d42a7c97b440a58480_Nav%20left%20item%20-%20DESKTOP.svg"
             loading="lazy"
             alt=""
             height="30"

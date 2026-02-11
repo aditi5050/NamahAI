@@ -222,7 +222,7 @@ export default function Models() {
         <div className="image-overlay-layer"></div>
         <img
           loading="eager"
-          src="/cdn.prod.website-files.com/681b040781d5b5e278a69989/6825887e82ac8a8bb8139ebd_GPT%20img%201.avif"
+          src="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6825887e82ac8a8bb8139ebd_GPT%20img%201.avif"
           alt=""
           className="models_bg-image active"
         />
@@ -259,7 +259,7 @@ export default function Models() {
         </div>
         <img
           loading="lazy"
-          src="/cdn.prod.website-files.com/681b040781d5b5e278a69989/6825887d618a9071dd147d5f_SD%203.5.avif"
+          src="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6825887d618a9071dd147d5f_SD%203.5.avif"
           alt=""
           className="models_bg-image"
         />
@@ -300,7 +300,7 @@ export default function Models() {
         </div>
         <img
           loading="lazy"
-          src="/cdn.prod.website-files.com/681b040781d5b5e278a69989/6825887d65bf65cc5194ac05_Imagen%203.avif"
+          src="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6825887d65bf65cc5194ac05_Imagen%203.avif"
           alt=""
           className="models_bg-image"
         />
@@ -341,7 +341,7 @@ export default function Models() {
         </div>
         <img
           loading="lazy"
-          src="/cdn.prod.website-files.com/681b040781d5b5e278a69989/6825887eda73c12eaa4c3ed8_Recraft%20V3.avif"
+          src="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6825887eda73c12eaa4c3ed8_Recraft%20V3.avif"
           alt=""
           className="models_bg-image"
         />
@@ -382,7 +382,7 @@ export default function Models() {
         </div>
         <img
           loading="lazy"
-          src="/cdn.prod.website-files.com/681b040781d5b5e278a69989/6825887d8a7b4e937a86ea6a_Flux%20Pro%201.1%20Ultra.avif"
+          src="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6825887d8a7b4e937a86ea6a_Flux%20Pro%201.1%20Ultra.avif"
           alt=""
           className="models_bg-image"
         />
@@ -423,7 +423,7 @@ export default function Models() {
         </div>
         <img
           loading="lazy"
-          src="/cdn.prod.website-files.com/681b040781d5b5e278a69989/6825887d9b7eb0abc91263b6_Ideogram%20V2.avif"
+          src="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6825887d9b7eb0abc91263b6_Ideogram%20V2.avif"
           alt=""
           className="models_bg-image"
         />
@@ -464,7 +464,7 @@ export default function Models() {
         </div>
         <img
           loading="lazy"
-          src="/cdn.prod.website-files.com/681b040781d5b5e278a69989/68258880f266d11a0748ab63_Minimax%20image%2001.avif"
+          src="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/68258880f266d11a0748ab63_Minimax%20image%2001.avif"
           alt=""
           className="models_bg-image"
         />

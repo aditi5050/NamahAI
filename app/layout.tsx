@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     description:
       "Transform your creative vision into scalable workflows with Weavy. Integrate AI models and editing tools in one seamless, node-based platform.",
     images: [
-      "/cdn.prod.website-files.com/681b040781d5b5e278a69989/6829db27001db19910ac428b_OG%20image%20option1.avif",
+      "https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6829db27001db19910ac428b_OG%20image%20option1.avif",
     ],
     type: "website",
   },
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     description:
       "Transform your creative vision into scalable workflows with Weavy. Integrate AI models and editing tools in one seamless, node-based platform.",
     images: [
-      "/cdn.prod.website-files.com/681b040781d5b5e278a69989/6829db27001db19910ac428b_OG%20image%20option1.avif",
+      "https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6829db27001db19910ac428b_OG%20image%20option1.avif",
     ],
   },
 };
@@ -41,12 +41,12 @@ export default function RootLayout({
       <head>
         <meta charSet="utf-8" />
         <link
-          href="/cdn.prod.website-files.com/681b040781d5b5e278a69989/6829dad31872740b3fb4f912_favicon.svg"
+          href="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6829dad31872740b3fb4f912_favicon.svg"
           rel="shortcut icon"
           type="image/x-icon"
         />
         <link
-          href="/cdn.prod.website-files.com/681b040781d5b5e278a69989/6829dad8315fe0e5d7abf94b_Webclip.svg"
+          href="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6829dad8315fe0e5d7abf94b_Webclip.svg"
           rel="apple-touch-icon"
         />
         <link

@@ -247,13 +247,13 @@ export default function Hero() {
             className="hr-card-color-reference node-connect w-node-_52114269-2ff0-e113-4d3f-3ab9ae07e166-78a6999f"
           >
             <img
-              src="/cdn.prod.website-files.com/681b040781d5b5e278a69989/681cd77722078ff43fe428f3_hcard-color%20reference.avif"
+              src="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/681cd77722078ff43fe428f3_hcard-color%20reference.avif"
               loading="lazy"
               alt=""
               className="hr_img-c-difference"
             />
             <img
-              src="/cdn.prod.website-files.com/681b040781d5b5e278a69989/681cd77722078ff43fe428f3_hcard-color%20reference.avif"
+              src="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/681cd77722078ff43fe428f3_hcard-color%20reference.avif"
               loading="lazy"
               alt=""
               className="hr_img-c-difference-mobile"
@@ -268,13 +268,13 @@ export default function Hero() {
             className="hr-card-stable-diffusion node-connect w-node-_92cb0ff1-51e7-fda9-cd40-e52909242cda-78a6999f"
           >
             <img
-              src="/cdn.prod.website-files.com/681b040781d5b5e278a69989/681cd7cbc22419b32bb9d8d8_hcard%20-%20STABLE%20DIFFUSION.avif"
+              src="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/681cd7cbc22419b32bb9d8d8_hcard%20-%20STABLE%20DIFFUSION.avif"
               loading="lazy"
               alt=""
               className="hr_img-stable-diff"
             />
             <img
-              src="/cdn.prod.website-files.com/681b040781d5b5e278a69989/681cd7cbc22419b32bb9d8d8_hcard%20-%20STABLE%20DIFFUSION.avif"
+              src="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/681cd7cbc22419b32bb9d8d8_hcard%20-%20STABLE%20DIFFUSION.avif"
               loading="lazy"
               alt=""
               className="hr_img-stable-diff-mobile"
@@ -312,7 +312,7 @@ export default function Hero() {
             className="hr-card-text node-connect w-node-_0555fc31-2b1b-83e8-70ea-b785ee076d41-78a6999f"
           >
             <img
-              src="/cdn.prod.website-files.com/681b040781d5b5e278a69989/681cde667778f6f5a7e80bf2_hcard%20-%20text.avif"
+              src="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/681cde667778f6f5a7e80bf2_hcard%20-%20text.avif"
               loading="lazy"
               alt=""
               className="hr_img-prompt-st"

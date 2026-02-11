@@ -1,4 +1,4 @@
-// File: C:\Users\ahuja\Downloads\www.weavy.ai\app\layout.tsx
+// File: /workspaces/www.weavy.ai/app/layout.tsx
 import * as entry from '../../../app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
