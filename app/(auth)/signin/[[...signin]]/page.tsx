@@ -1,6 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useSignIn, useUser } from '@clerk/nextjs';
+import { OAuthStrategy } from '@clerk/types';
 import { useRouter } from 'next/navigation';
 
 const WeavyLogoSVG = () => (
@@ -62,17 +64,60 @@ const MicrosoftLogoSVG = () => (
 );
 
 export default function Page() {
+  const { signIn, isLoaded } = useSignIn();
+  const { isSignedIn, isLoaded: isUserLoaded } = useUser();
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
 
+  // Redirect if already signed in
+  useEffect(() => {
+    if (isUserLoaded && isSignedIn) {
+      router.push('/flow');
+    }
+  }, [isUserLoaded, isSignedIn, router]);
+
   const handleOAuthSignIn = async (provider: 'google' | 'figma' | 'microsoft') => {
+    if (!isLoaded || !signIn) return;
+    
+    // If already signed in, redirect to flow
+    if (isSignedIn) {
+      router.push('/flow');
+      return;
+    }
+    
+    // Figma is coming soon
+    if (provider === 'figma') {
+      // You can replace this with a toast notification if available
+      console.log("Figma authentication coming soon");
+      return;
+    }
+
     setIsLoading(true);
     try {
-      setTimeout(() => {
-        router.push('/flow');
-      }, 1000);
-    } catch (error) {
+      // Map provider names to Clerk OAuth strategies
+      // Removed oauth_figma as it is not a valid strategy in the current types
+      const strategyMap: Record<string, OAuthStrategy> = {
+        google: 'oauth_google',
+        microsoft: 'oauth_microsoft'
+      };
+
+      const strategy = strategyMap[provider];
+      if (!strategy) return;
+
+      await signIn.authenticateWithRedirect({
+        strategy: strategy,
+        redirectUrl: '/sso-callback',
+        redirectUrlComplete: '/flow',
+      });
+    } catch (error: any) {
       console.error('Sign in error:', error);
+      
+      // Handle "Session already exists" error by redirecting to flow
+      if (error?.errors?.[0]?.code === 'session_exists') {
+        router.push('/flow');
+        return;
+      }
+      
       setIsLoading(false);
     }
   };
@@ -106,7 +151,7 @@ export default function Page() {
               <div style={{ backgroundColor: 'white', padding: '32px 24px', borderRadius: '0 0 8px 8px', boxShadow: '0 1px 3px rgba(0,0,0,0.12)' }}>
                 <h1 style={{ fontSize: '32px', fontWeight: 500, textAlign: 'center', marginBottom: '12px', color: 'rgb(33, 33, 38)' }}>Welcome to Weavy</h1>
                 <p style={{ fontSize: '13px', color: 'rgb(100, 100, 100)', textAlign: 'center', marginBottom: '24px', lineHeight: 1.5 }}>
-                  By clicking "Log in with Figma, Google, or Microsoft", you agree to{' '}
+                  By clicking &quot;Log in with Figma, Google, or Microsoft&quot;, you agree to{' '}
                   <a href="https://content.weavy.ai/terms-of-service" target="_blank" rel="noopener noreferrer" style={{ color: 'rgb(25, 103, 210)', textDecoration: 'underline' }}>
                     Weavy Terms of Service
                   </a>{' '}

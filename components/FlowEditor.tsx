@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useEffect, useState, useCallback, useRef } from "react";
 import ReactFlow, {
   Background,
   Controls,
@@ -83,6 +83,9 @@ export default function FlowEditor({ workflowId }: FlowEditorProps) {
   const [nodes, setNodes, onNodesChange] = useNodesState([]);
   const [edges, setEdges, onEdgesChange] = useEdgesState([]);
 
+  const reactFlowWrapper = useRef<HTMLDivElement | null>(null);
+  const [reactFlowInstance, setReactFlowInstance] = useState<any | null>(null);
+
   const { canUndo, canRedo, undo, redo, push } = useHistoryStore();
 
   // Load workflow on mount
@@ -163,10 +166,20 @@ export default function FlowEditor({ workflowId }: FlowEditorProps) {
       const type = event.dataTransfer.getData("application/reactflow");
       if (!type) return;
 
+      let position = { x: Math.random() * 400, y: Math.random() * 400 };
+
+      if (reactFlowWrapper.current && reactFlowInstance) {
+        const bounds = reactFlowWrapper.current.getBoundingClientRect();
+        position = reactFlowInstance.project({
+          x: event.clientX - bounds.left,
+          y: event.clientY - bounds.top,
+        });
+      }
+
       const newNode: Node = {
         id: uuidv4(),
         type: type || "textNode",
-        position: { x: Math.random() * 400, y: Math.random() * 400 },
+        position,
         data: { label: `${type} Node` },
       };
 
@@ -174,7 +187,7 @@ export default function FlowEditor({ workflowId }: FlowEditorProps) {
       setNodes(newNodes);
       push({ nodes: newNodes, edges });
     },
-    [nodes, edges, setNodes, push]
+    [nodes, edges, setNodes, push, reactFlowInstance]
   );
 
   const onDragOver = useCallback((event: React.DragEvent) => {
@@ -216,6 +229,7 @@ export default function FlowEditor({ workflowId }: FlowEditorProps) {
 
   return (
     <div className="w-full h-full relative">
+      <div ref={reactFlowWrapper} className="w-full h-full">
       <ReactFlow
         nodes={nodes}
         edges={edges}
@@ -227,7 +241,9 @@ export default function FlowEditor({ workflowId }: FlowEditorProps) {
         onDragOver={onDragOver}
         nodeTypes={nodeTypes}
         fitView
+        className="dark"
         defaultViewport={{ x: 0, y: 0, zoom: 1 }}
+        onInit={(instance) => setReactFlowInstance(instance)}
       >
         <Background
           variant={BackgroundVariant.Dots}
@@ -246,6 +262,7 @@ export default function FlowEditor({ workflowId }: FlowEditorProps) {
           pannable
         />
       </ReactFlow>
+      </div>
 
       {/* Toolbar */}
       <div className="absolute top-4 left-4 bg-white rounded-lg shadow-lg p-2 flex gap-2 z-10">
