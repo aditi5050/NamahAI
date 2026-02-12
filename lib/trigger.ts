@@ -69,18 +69,4 @@ export const uploadProxyTask = async (payload: any) => {
   return { url: payload.url || payload.filename }; // If filename is actually a URL
 };
 
-// Re-export triggering logic
-import { runWorkflowEngine } from "@/lib/engine";
-
-export const triggerWorkflow = async (runId: string, inputs: any) => {
-  // In a fully deployed Trigger.dev scenario, we would send an event here:
-  // await client.sendEvent("run.workflow", { runId, inputs });
-  
-  // For now, continuing the pattern of direct async execution (Background Job simulation)
-  // This allows it to run on Vercel Serverless (with timeout limits) or just immediately.
-  // Ideally, this should be offloaded to a background worker.
-  
-  // We'll keep the direct call but ensure it's async and doesn't block the API response.
-  runWorkflowEngine(runId, inputs); 
-};
 

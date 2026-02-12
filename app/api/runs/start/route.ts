@@ -1,8 +1,7 @@
 import { auth } from '@clerk/nextjs/server';
 import { NextResponse } from 'next/server';
 import prisma from '@/lib/prisma';
-import { startRunSchema } from '@/lib/validations/workflow';
-import { triggerWorkflow } from '@/lib/trigger'; // We will create this
+import { runWorkflowEngine } from '@/lib/engine';
 
 export async function POST(req: Request) {
   try {
@@ -12,13 +11,12 @@ export async function POST(req: Request) {
     }
 
     const body = await req.json();
-    const result = startRunSchema.safeParse(body);
 
-    if (!result.success) {
-      return new NextResponse("Invalid request body", { status: 400 });
+    const { workflowId, inputs } = body;
+
+    if (!workflowId) {
+      return new NextResponse("Workflow ID required", { status: 400 });
     }
-
-    const { workflowId, inputs } = result.data;
 
     // Verify ownership
     const workflow = await prisma.workflow.findUnique({
@@ -45,14 +43,9 @@ export async function POST(req: Request) {
       }
     });
 
-    // Trigger Execution Engine
-    // In Phase 1, we simulate this call or call our internal execution logic.
-    // For now, let's call a lib function that will eventually call Trigger.dev
-    
     // Fire and forget execution logic so we return runId immediately
-    triggerWorkflow(run.id, inputs).catch(err => {
+    runWorkflowEngine(run.id, inputs).catch(err => {
       console.error("Failed to trigger workflow", err);
-      // In production, we'd want to update the run status to FAILED here if trigger fails
     });
 
     return NextResponse.json({ runId: run.id });
@@ -61,3 +54,4 @@ export async function POST(req: Request) {
     return new NextResponse("Internal Error", { status: 500 });
   }
 }
+
