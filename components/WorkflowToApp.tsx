@@ -93,7 +93,6 @@ export default function WorkflowToApp() {
                 </div>
                 <div className="w2a_dynamic-cards">
                   <div className="w2al_prompt-2-output-comp">
-                    {/* Lottie animations commented out as files are missing
                     <div
                       data-w-id="5da2f4c0-a3c5-ebab-7b77-73bd3316d68c"
                       data-is-ix2-target="1"
@@ -120,22 +119,6 @@ export default function WorkflowToApp() {
                       data-default-duration="0"
                       data-duration="1.6"
                     ></div>
-                    */}
-                    <div
-                      className="wrkf-to-app-desktop"
-                      style={{
-                        backgroundColor: "#1a1a1a",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        color: "#666",
-                        border: "1px dashed #333",
-                        borderRadius: "8px",
-                        minHeight: "400px",
-                      }}
-                    >
-                      Animation Placeholder
-                    </div>
                   </div>
                 </div>
               </div>
