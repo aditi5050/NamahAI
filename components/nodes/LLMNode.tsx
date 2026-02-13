@@ -61,7 +61,7 @@ export function LLMNode({ id, data, selected }: NodeProps) {
       <div className="flex items-center justify-between px-3 py-2 border-b bg-[#6F42C1]/10 border-[#2A2A2F] rounded-t-lg">
         <div className="flex items-center">
           <Cpu className="w-4 h-4 mr-2 text-[#6F42C1]" />
-          <span className="text-sm font-medium text-gray-900">LLM Model</span>
+          <span className="text-sm font-medium text-white">LLM Model</span>
           {isRunning && (
             <Loader2 className="ml-2 w-3 h-3 animate-spin text-[#6F42C1]" />
           )}
@@ -78,7 +78,7 @@ export function LLMNode({ id, data, selected }: NodeProps) {
       <div className="p-3 space-y-3">
         {/* Model Selector */}
         <div>
-          <label className="block text-xs font-medium text-black mb-1">
+          <label className="block text-xs font-medium text-white mb-1">
             Model
           </label>
           <div className="relative">
@@ -101,7 +101,7 @@ export function LLMNode({ id, data, selected }: NodeProps) {
 
         {/* User Prompt Input */}
         <div>
-          <label className="block text-xs font-medium text-black mb-1">
+          <label className="block text-xs font-medium text-white mb-1">
             Prompt
           </label>
           <textarea
@@ -116,14 +116,14 @@ export function LLMNode({ id, data, selected }: NodeProps) {
 
         {/* Inputs Display (Visual Only - real connection via handles) */}
         <div className="space-y-1 text-xs pt-2 border-t border-[#2A2A2F]">
-          <div className="text-gray-700 font-medium mb-2">Connected Inputs:</div>
-          <div className="flex items-center justify-between text-gray-700">
+          <div className="text-gray-300 font-medium mb-2">Connected Inputs:</div>
+          <div className="flex items-center justify-between text-gray-300">
             <span>• System Prompt</span>
           </div>
-          <div className="flex items-center justify-between text-gray-700">
+          <div className="flex items-center justify-between text-gray-300">
             <span>• User Message</span>
           </div>
-          <div className="flex items-center justify-between text-gray-700">
+          <div className="flex items-center justify-between text-gray-300">
             <span>• Images</span>
           </div>
         </div>
@@ -132,7 +132,7 @@ export function LLMNode({ id, data, selected }: NodeProps) {
         {output && (
           <div className="mt-3 pt-3 border-t border-[#2A2A2F]">
             <div className="flex items-center justify-between mb-2">
-              <label className="block text-xs font-medium text-gray-400">
+              <label className="block text-xs font-medium text-gray-300">
                 Output
               </label>
               <button
@@ -146,7 +146,7 @@ export function LLMNode({ id, data, selected }: NodeProps) {
               {typeof output === 'object' ? (output as any).text || JSON.stringify(output, null, 2) : output}
             </div>
             {duration && (
-              <div className="mt-1 text-xs text-gray-500">
+              <div className="mt-1 text-xs text-gray-400">
                 Execution time: {(duration / 1000).toFixed(2)}s
               </div>
             )}
@@ -190,7 +190,7 @@ export function LLMNode({ id, data, selected }: NodeProps) {
         style={{ top: 60, background: "#3B82F6" }}
         className="w-3 h-3 border-2 border-[#1E1E24]"
       />
-      <div className="absolute left-[-60px] top-[53px] text-[10px] text-gray-500 w-[50px] text-right pointer-events-none">
+      <div className="absolute left-[-60px] top-[53px] text-[10px] text-gray-400 w-[50px] text-right pointer-events-none">
         System
       </div>
 
@@ -201,7 +201,7 @@ export function LLMNode({ id, data, selected }: NodeProps) {
         style={{ top: 98, background: "#3B82F6" }}
         className="w-3 h-3 border-2 border-[#1E1E24]"
       />
-      <div className="absolute left-[-60px] top-[91px] text-[10px] text-gray-500 w-[50px] text-right pointer-events-none">
+      <div className="absolute left-[-60px] top-[91px] text-[10px] text-gray-400 w-[50px] text-right pointer-events-none">
         User
       </div>
 
@@ -212,7 +212,7 @@ export function LLMNode({ id, data, selected }: NodeProps) {
         style={{ top: 136, background: "#10B981" }}
         className="w-3 h-3 border-2 border-[#1E1E24]"
       />
-      <div className="absolute left-[-60px] top-[129px] text-[10px] text-gray-500 w-[50px] text-right pointer-events-none">
+      <div className="absolute left-[-60px] top-[129px] text-[10px] text-gray-400 w-[50px] text-right pointer-events-none">
         Images
       </div>
 

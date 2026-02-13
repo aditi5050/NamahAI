@@ -99,19 +99,19 @@ const Sidebar: React.FC<SidebarProps> = ({ onDragStart }) => {
 
     return (
         <div className="flex h-full">
-            {/* Main sidebar column - fixed width 48px when closed */}
-            <div className="w-12 h-full bg-[#141414] flex flex-col shrink-0 border-r border-[#2a2a2a]">
+            {/* Main sidebar column - fixed width 64px when closed */}
+            <div className="w-16 h-full bg-[#141414] flex flex-col shrink-0 border-r border-[#2a2a2a]">
                 {/* Logo - Link to Dashboard */}
                 <Link
                     href="/dashboard"
-                    className="h-12 flex items-center justify-center border-b border-[#2a2a2a] hover:bg-[#1a1a1a] transition-colors p-2"
+                    className="h-24 flex items-center justify-center border-b border-[#2a2a2a] hover:bg-[#1a1a1a] transition-colors p-2"
                     title="Back to Dashboard"
                 >
                      {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
-                        src="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/682350d42a7c97b440a58480_Nav%20left%20item%20-%20DESKTOP.svg"
+                        src="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6829dad31872740b3fb4f912_favicon.svg"
                         alt="Weavy Logo"
-                        className="w-full h-full object-contain"
+                        className="w-16 h-16 object-contain"
                     />
                 </Link>
 
@@ -119,10 +119,10 @@ const Sidebar: React.FC<SidebarProps> = ({ onDragStart }) => {
                 <div className="flex flex-col items-center pt-4 gap-3">
                     <Link
                         href="/dashboard"
-                        className="w-8 h-8 flex items-center justify-center text-white/80 hover:bg-[#2a2a2a] hover:text-white rounded-lg cursor-pointer transition-all"
+                        className="w-8 h-8 flex items-center justify-center bg-[#4a4a4a] hover:bg-[#5a5a5a] rounded-lg cursor-pointer transition-all"
                         title="Back to Dashboard"
                     >
-                        <ArrowLeft className="w-4 h-4" strokeWidth={1.5} />
+                        <ArrowLeft className="w-4 h-4 text-gray-100 stroke-white" strokeWidth={1.5} />
                     </Link>
 
                     <button

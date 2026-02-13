@@ -22,7 +22,7 @@ export function ExtractFrameNode({ id, data, selected }: NodeProps) {
       <div className="flex items-center justify-between px-3 py-2 border-b bg-[#6366F1]/10 rounded-t-lg border-[#2A2A2F]">
         <div className="flex items-center">
           <Film className="w-4 h-4 mr-2 text-[#6366F1]" />
-          <span className="text-sm font-medium text-gray-900">Extract Frame</span>
+          <span className="text-sm font-medium text-white">Extract Frame</span>
         </div>
         <button
           onClick={onDelete}
@@ -35,7 +35,7 @@ export function ExtractFrameNode({ id, data, selected }: NodeProps) {
       
       <div className="p-3 space-y-2">
         <div>
-          <label className="block text-xs font-medium text-black mb-1">Timestamp</label>
+          <label className="block text-xs font-medium text-white mb-1">Timestamp</label>
           <input 
             type="text" 
             placeholder="e.g. 50% or 10" 
@@ -44,7 +44,7 @@ export function ExtractFrameNode({ id, data, selected }: NodeProps) {
             value={data?.timestamp ?? ''} 
             onChange={onTimestampChange} 
           />
-          <p className="text-[10px] text-gray-700 mt-1">Seconds or Percentage (%)</p>
+          <p className="text-[10px] text-gray-300 mt-1">Seconds or Percentage (%)</p>
         </div>
       </div>
 
@@ -55,7 +55,7 @@ export function ExtractFrameNode({ id, data, selected }: NodeProps) {
         className="w-3 h-3 bg-red-500 border-2 border-red-500"
         style={{ top: 40 }}
       />
-      <div className="absolute left-[-50px] top-[33px] text-[10px] text-gray-500 w-[40px] text-right pointer-events-none">Video</div>
+      <div className="absolute left-[-50px] top-[33px] text-[10px] text-gray-400 w-[40px] text-right pointer-events-none">Video</div>
 
       <Handle
         type="target"
@@ -64,7 +64,7 @@ export function ExtractFrameNode({ id, data, selected }: NodeProps) {
         className="w-3 h-3 bg-blue-500 border-2 border-blue-500"
         style={{ top: 80 }}
       />
-      <div className="absolute left-[-50px] top-[73px] text-[10px] text-gray-500 w-[40px] text-right pointer-events-none">Time</div>
+      <div className="absolute left-[-50px] top-[73px] text-[10px] text-gray-400 w-[40px] text-right pointer-events-none">Time</div>
 
       <Handle
         type="source"

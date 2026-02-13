@@ -25,7 +25,7 @@ export function TextNode({ id, data, selected }: NodeProps) {
       <div className="flex items-center justify-between px-3 py-2 border-b bg-[#6F42C1]/10 border-[#2A2A2F] rounded-t-lg">
         <div className="flex items-center">
           <Type className="w-4 h-4 mr-2 text-[#6F42C1]" />
-          <span className="text-sm font-medium text-gray-900">Text Node</span>
+          <span className="text-sm font-medium text-white">Text Node</span>
         </div>
         <button
           onClick={onDelete}
@@ -36,7 +36,7 @@ export function TextNode({ id, data, selected }: NodeProps) {
         </button>
       </div>
       <div className="p-3">
-        <label className="block text-xs font-medium text-black mb-1">Text Content</label>
+        <label className="block text-xs font-medium text-white mb-1">Text Content</label>
         <textarea
           className="w-full px-2 py-1 text-sm border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#6F42C1] min-h-[80px] resize-y bg-white text-black placeholder-gray-400"
           placeholder="Enter text here..."

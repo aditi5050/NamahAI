@@ -106,10 +106,10 @@ const CanvasInner: React.FC<CanvasProps> = ({ onDragOver, onDrop }) => {
             >
                 <Background
                     variant={BackgroundVariant.Dots}
-                    gap={20}
-                    size={1}
-                    color="#222"
-                    className="opacity-50"
+                    gap={24}
+                    size={2.5}
+                    color="#555"
+                    className="opacity-100"
                 />
                 
                 {/* Controls Panel */}
