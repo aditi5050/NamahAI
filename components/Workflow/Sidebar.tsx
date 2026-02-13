@@ -104,15 +104,12 @@ const Sidebar: React.FC<SidebarProps> = ({ onDragStart }) => {
                 {/* Logo - Link to Dashboard */}
                 <Link
                     href="/dashboard"
-                    className="h-24 flex items-center justify-center border-b border-[#2a2a2a] hover:bg-[#1a1a1a] transition-colors p-2"
+                    className="h-24 flex items-center justify-center transition-colors p-2"
                     title="Back to Dashboard"
                 >
-                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                        src="https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6829dad31872740b3fb4f912_favicon.svg"
-                        alt="Weavy Logo"
-                        className="w-16 h-16 object-contain"
-                    />
+                    <svg width="40" height="34" viewBox="0 0 35 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M34.6895 0H25.8153V19.4784H21.7818V0H12.9077V19.4784H8.87414V0H0V19.6353H6.45383V30H15.328V19.6353H19.3615V30H28.2356V19.6353H34.6895V0Z" fill="white" />
+                    </svg>
                 </Link>
 
                 {/* Icon Buttons */}
@@ -181,7 +178,7 @@ const Sidebar: React.FC<SidebarProps> = ({ onDragStart }) => {
 
                     {/* Quick Access Section */}
                     <div className="p-4 flex-1 overflow-y-auto">
-                        <h3 className="text-[10px] font-medium text-white/70 uppercase tracking-wide mb-3">Quick access</h3>
+                        <h3 style={{ fontSize: '20px', fontWeight: 500, color: 'rgba(255,255,255,0.7)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '32px' }}>Quick access</h3>
 
                         <div className="grid grid-cols-2 gap-2">
                             {filteredNodes.length > 0 ? (
