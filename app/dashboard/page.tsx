@@ -173,7 +173,7 @@ export default function DashboardPage() {
             <main className="flex-1 p-8 z-10">
                 <div className="w-full">
                     <div className="flex items-center justify-between mb-8">
-                        <h1 className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold !text-white">
+                        <h1 style={{ fontSize: '50px', fontWeight: 500, color: '#ffffff' }}>
                             {user?.firstName}&apos;s Workspace
                         </h1>
                         <button
@@ -188,7 +188,7 @@ export default function DashboardPage() {
 
                     {/* My Files */}
                     <section>
-                        <h2 className="text-xs sm:text-sm font-medium text-white mb-4">My files</h2>
+                        <h2 style={{ fontSize: '30px', fontWeight: 500, color: '#ffffff', marginBottom: '32px' }}>My files</h2>
 
                         {workflows.length === 0 ? (
                             <div className="text-center py-20">
@@ -204,12 +204,12 @@ export default function DashboardPage() {
                                 </button>
                             </div>
                         ) : (
-                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 sm:gap-3">
+                            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-x-2 gap-y-3">
                                 {workflows.map((workflow) => (
                                     <div
                                         key={workflow.id}
                                         onClick={() => router.push(`/flow/${workflow.id}`)}
-                                        className="group bg-[#161616] border border-[#2a2a2a] rounded-xl overflow-hidden hover:border-[#3a3a3a] transition-all cursor-pointer hover:shadow-lg hover:shadow-white/5"
+                                        className="group bg-[#161616] border border-[#2a2a2a] rounded-lg overflow-hidden hover:border-[#3a3a3a] transition-all cursor-pointer hover:shadow-lg hover:shadow-white/5" style={{ maxWidth: '220px' }}
                                     >
                                         {/* Preview */}
                                         <div className="aspect-video bg-[#111] flex items-center justify-center relative">
@@ -223,7 +223,7 @@ export default function DashboardPage() {
                                         </div>
                                         {/* Info */}
                                         <div className="p-2 sm:p-3 bg-[#161616]">
-                                            <h3 className="text-xs sm:text-sm text-white font-medium truncate">
+                                            <h3 style={{ fontSize: '20px', color: 'white', fontWeight: 500 }} className="truncate">
                                                 {workflow.name}
                                             </h3>
                                             <p className="text-[#666] text-xs mt-1 text-[10px] sm:text-xs">
