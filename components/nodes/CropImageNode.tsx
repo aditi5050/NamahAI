@@ -1,11 +1,11 @@
 import React, { useCallback } from 'react';
 import { Handle, Position, NodeProps } from 'reactflow';
 import { Crop, Trash2 } from 'lucide-react';
-import { useWorkflowEditorStore } from '@/stores/workflowEditorStore';
+import { useWorkflowStore } from '@/stores/workflowStore';
 
 export function CropImageNode({ id, data, selected }: NodeProps) {
-  const updateNodeData = useWorkflowEditorStore((state) => state.updateNodeData);
-  const deleteNode = useWorkflowEditorStore((state) => state.deleteNode);
+  const updateNodeData = useWorkflowStore((state) => state.updateNodeData);
+  const deleteNode = useWorkflowStore((state) => state.deleteNode);
 
   if (!data) return null;
 

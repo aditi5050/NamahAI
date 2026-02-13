@@ -1,12 +1,12 @@
 import React, { useCallback } from 'react';
 import { Handle, Position, NodeProps } from 'reactflow';
 import { Type, Trash2 } from 'lucide-react';
-import { useWorkflowEditorStore } from '@/stores/workflowEditorStore';
+import { useWorkflowStore } from '@/stores/workflowStore';
 import { useNodeStatus } from '@/hooks/useNodeStatus';
 
 export function TextNode({ id, data, selected }: NodeProps) {
-  const updateNodeData = useWorkflowEditorStore((state) => state.updateNodeData);
-  const deleteNode = useWorkflowEditorStore((state) => state.deleteNode);
+  const updateNodeData = useWorkflowStore((state) => state.updateNodeData);
+  const deleteNode = useWorkflowStore((state) => state.deleteNode);
   const status = useNodeStatus(id);
   const isRunning = status === 'RUNNING';
 

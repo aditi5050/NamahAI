@@ -1,11 +1,11 @@
 import React, { useCallback, useState } from 'react';
 import { Handle, Position, NodeProps } from 'reactflow';
 import { Image as ImageIcon, UploadCloud, Trash2 } from 'lucide-react';
-import { useWorkflowEditorStore } from '@/stores/workflowEditorStore';
+import { useWorkflowStore } from '@/stores/workflowStore';
 
 export function UploadImageNode({ id, data, selected }: NodeProps) {
-  const updateNodeData = useWorkflowEditorStore((state) => state.updateNodeData);
-  const deleteNode = useWorkflowEditorStore((state) => state.deleteNode);
+  const updateNodeData = useWorkflowStore((state) => state.updateNodeData);
+  const deleteNode = useWorkflowStore((state) => state.deleteNode);
   const [uploading, setUploading] = useState(false);
 
   const onDelete = useCallback(() => {

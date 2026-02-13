@@ -1,7 +1,7 @@
 import React, { useCallback } from "react";
 import { Handle, Position, NodeProps } from "reactflow";
 import { Cpu, ChevronDown, Loader2, Copy, Trash2 } from "lucide-react";
-import { useWorkflowEditorStore } from "@/stores/workflowEditorStore";
+import { useWorkflowStore } from '@/stores/workflowStore';
 import {
   useNodeStatus,
   useNodeOutput,
@@ -16,8 +16,8 @@ const MODELS = [
 ];
 
 export function LLMNode({ id, data, selected }: NodeProps) {
-  const updateNodeData = useWorkflowEditorStore((state) => state.updateNodeData);
-  const deleteNode = useWorkflowEditorStore((state) => state.deleteNode);
+  const updateNodeData = useWorkflowStore((state) => state.updateNodeData);
+  const deleteNode = useWorkflowStore((state) => state.deleteNode);
   const status = useNodeStatus(id);
   const output = useNodeOutput(id);
   const error = useNodeError(id);
