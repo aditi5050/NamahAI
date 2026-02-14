@@ -1,6 +1,7 @@
 import { auth } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
 import prisma from "@/lib/prisma";
+import { NodeExecution } from "@prisma/client";
 
 // Server-Sent Events streaming for real-time run updates
 export async function GET(
@@ -8,7 +9,9 @@ export async function GET(
   { params }: { params: { id: string } }
 ) {
   try {
+
     const { userId } = await auth();
+
     if (!userId) {
       return new NextResponse("Unauthorized", { status: 401 });
     }
@@ -36,6 +39,7 @@ export async function GET(
 
     const customReadable = new ReadableStream({
       async start(controller) {
+
         // Send initial state
         const initialRun = await prisma.workflowRun.findUnique({
           where: { id: runId },
@@ -55,12 +59,11 @@ export async function GET(
           );
         }
 
-        // Poll for updates every 500ms (more efficient than 1s)
         let lastFetchedAt = new Date();
-        let isCompleted = false;
 
         const interval = setInterval(async () => {
           try {
+
             const updatedRun = await prisma.workflowRun.findUnique({
               where: { id: runId },
               include: {
@@ -69,7 +72,9 @@ export async function GET(
             });
 
             if (!updatedRun) {
+
               clearInterval(interval);
+
               controller.enqueue(
                 encoder.encode(
                   `data: ${JSON.stringify({
@@ -78,18 +83,25 @@ export async function GET(
                   })}\n\n`
                 )
               );
+
               controller.close();
               return;
             }
 
-            // Send updates for changed nodes
+            // ✅ FIXED typing here
             const updates = updatedRun.nodeExecutions
-              .filter((exec) => {
-                // Consider a node updated if it's not pending anymore or has been completed
-                const wasModified = exec.completedAt && exec.completedAt > lastFetchedAt;
-                return wasModified || (exec.status !== "PENDING" && !exec.completedAt);
+              .filter((exec: NodeExecution) => {
+
+                const wasModified =
+                  exec.completedAt &&
+                  exec.completedAt > lastFetchedAt;
+
+                return (
+                  wasModified ||
+                  (exec.status !== "PENDING" && !exec.completedAt)
+                );
               })
-              .map((exec) => ({
+              .map((exec: NodeExecution) => ({
                 nodeId: exec.nodeId,
                 status: exec.status,
                 output: exec.outputs,
@@ -114,6 +126,7 @@ export async function GET(
               updatedRun.status === "FAILED" ||
               updatedRun.status === "CANCELLED"
             ) {
+
               controller.enqueue(
                 encoder.encode(
                   `data: ${JSON.stringify({
@@ -122,16 +135,18 @@ export async function GET(
                   })}\n\n`
                 )
               );
-              isCompleted = true;
+
               clearInterval(interval);
               setTimeout(() => controller.close(), 1000);
             }
 
             lastFetchedAt = new Date();
+
           } catch (error) {
             console.error("[SSE_ERROR]", error);
             clearInterval(interval);
           }
+
         }, 500);
 
         // Cleanup on client disconnect
@@ -139,6 +154,7 @@ export async function GET(
           clearInterval(interval);
           controller.close();
         });
+
       },
     });
 
@@ -149,8 +165,11 @@ export async function GET(
         Connection: "keep-alive",
       },
     });
+
   } catch (error) {
+
     console.error("[RUN_STREAM]", error);
+
     return new NextResponse("Internal Error", { status: 500 });
   }
 }
