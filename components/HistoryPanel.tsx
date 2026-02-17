@@ -95,9 +95,9 @@ export default function HistoryPanel({ workflowId }: HistoryPanelProps) {
   }
 
   return (
-    <aside className="w-80 bg-[#141418] border-l border-[#2A2A2F] h-full flex flex-col z-10">
+    <aside className="w-80 bg-[#141418] border-l border-[#2A2A2F] h-full flex flex-col z-10 overflow-hidden">
       {/* Header */}
-      <div className="p-3 border-b border-[#2A2A2F] flex justify-between items-center bg-[#1A1A20]">
+      <div className="flex-shrink-0 p-3 border-b border-[#2A2A2F] flex justify-between items-center bg-[#1A1A20]">
         <div className="flex items-center gap-2">
           <History className="w-3.5 h-3.5 text-purple-400" />
           <h2 className="text-xs font-semibold text-white">Execution History</h2>
@@ -113,14 +113,14 @@ export default function HistoryPanel({ workflowId }: HistoryPanelProps) {
 
       {/* Debug info - remove in production */}
       {process.env.NODE_ENV === 'development' && (
-        <div className="px-3 py-2 bg-[#1E1E24] border-b border-[#2A2A2F] text-[10px] text-gray-500">
+        <div className="flex-shrink-0 px-3 py-2 bg-[#1E1E24] border-b border-[#2A2A2F] text-[10px] text-gray-500">
           <div>Workflow: {workflowId?.slice(0, 16) || 'none'}...</div>
           <div>Runs loaded: {runs.length}</div>
         </div>
       )}
 
-      {/* Content */}
-      <div className="flex-1 overflow-y-auto">
+      {/* Content - Scrollable */}
+      <div className="flex-1 min-h-0 overflow-y-auto">
         {runs.length === 0 ? (
           <div className="flex flex-col items-center justify-center h-full text-center px-6">
             <div className="w-16 h-16 rounded-full bg-[#1A1A20] flex items-center justify-center mb-4">

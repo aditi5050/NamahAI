@@ -9,9 +9,11 @@ const prismaClientSingleton = () => {
     connectionString,
     max: 10, // Reduced pool size for better stability
     min: 2,  // Keep minimum connections alive
-    idleTimeoutMillis: 30000, // 30 seconds idle timeout
-    connectionTimeoutMillis: 10000, // 10 second connection timeout
+    idleTimeoutMillis: 60000, // 60 seconds idle timeout
+    connectionTimeoutMillis: 15000, // 15 second connection timeout
     allowExitOnIdle: false, // Keep connections alive
+    statement_timeout: 120000, // 120 second statement timeout
+    query_timeout: 120000, // 120 second query timeout
   };
 
   const pool = new Pool(poolConfig);
@@ -30,6 +32,10 @@ const prismaClientSingleton = () => {
   return new PrismaClient({
     adapter,
     log: ['error'],
+    transactionOptions: {
+      timeout: 120000, // 120 second transaction timeout
+      maxWait: 15000,  // 15 second max wait for connection
+    },
   });
 };
 

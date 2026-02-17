@@ -83,9 +83,10 @@ export default function ExecutionHistory({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-30 bg-black bg-opacity-50 flex items-end">
-      <div className="bg-white w-full md:w-96 max-h-96 rounded-t-lg shadow-lg border-t border-gray-200 overflow-hidden flex flex-col">
-        <div className="sticky top-0 bg-white border-b border-gray-200 p-4 flex items-center justify-between">
+    <div className="fixed inset-0 z-30 bg-black/50 flex items-end justify-center">
+      <div className="bg-white w-full md:w-[400px] rounded-t-lg shadow-lg border-t border-gray-200">
+        {/* Header - fixed */}
+        <div className="bg-white border-b border-gray-200 p-4 flex items-center justify-between rounded-t-lg">
           <h3 className="font-semibold text-gray-900">Execution History</h3>
           <button
             onClick={onClose}
@@ -95,7 +96,11 @@ export default function ExecutionHistory({
           </button>
         </div>
 
-        <div className="overflow-y-auto flex-1">
+        {/* Scrollable content area with fixed height */}
+        <div 
+          className="overflow-y-scroll bg-white"
+          style={{ height: '340px' }}
+        >
           {loading ? (
             <div className="p-4 text-center text-gray-500">Loading...</div>
           ) : runs.length === 0 ? (
@@ -103,9 +108,9 @@ export default function ExecutionHistory({
               No runs yet. Execute the workflow to see history.
             </div>
           ) : (
-            <div className="divide-y">
+            <div>
               {runs.map((run) => (
-                <div key={run.id} className="p-3 hover:bg-gray-50 cursor-pointer">
+                <div key={run.id} className="p-3 hover:bg-gray-50 cursor-pointer border-b border-gray-100">
                   <div
                     className="flex items-center gap-2"
                     onClick={() =>

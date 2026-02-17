@@ -57,10 +57,11 @@ export function LLMNode({ id, data, selected }: NodeProps) {
   }, [deleteThisNode]);
 
   const copyOutput = useCallback(() => {
-    if (data.output) {
-      navigator.clipboard.writeText(data.output);
+    const textToCopy = data.output || output?.output || output?.text || (output ? JSON.stringify(output) : '');
+    if (textToCopy) {
+      navigator.clipboard.writeText(typeof textToCopy === 'string' ? textToCopy : JSON.stringify(textToCopy));
     }
-  }, [data.output]);
+  }, [data.output, output]);
 
   // Collect inputs from all connected nodes
   const collectInputs = useCallback(async () => {
@@ -257,13 +258,13 @@ export function LLMNode({ id, data, selected }: NodeProps) {
         </div>
 
         {/* Output Display */}
-        {(data.output || data.isLoading || data.error) && (
+        {(data.output || output || data.isLoading || data.error || error) && (
           <div className="mt-3 pt-3 border-t border-[#2A2A2F]">
             <div className="flex items-center justify-between mb-2">
               <label className="block text-xs font-medium text-gray-300">
                 Output
               </label>
-              {data.output && (
+              {(data.output || output) && (
                 <button
                   onClick={copyOutput}
                   className="p-1 hover:bg-[#2A2A2F] rounded text-gray-500 hover:text-gray-300 transition-colors"
@@ -278,13 +279,16 @@ export function LLMNode({ id, data, selected }: NodeProps) {
                 <Loader2 className="w-4 h-4 animate-spin" />
                 <span className="text-xs">Generating response...</span>
               </div>
-            ) : data.error ? (
+            ) : (data.error || error) ? (
               <div className="bg-red-900/20 p-3 rounded text-xs text-red-400 border border-red-800/50">
-                {data.error}
+                {data.error || error}
               </div>
-            ) : data.output ? (
+            ) : (data.output || output) ? (
               <div className="bg-[#0E0E13] p-3 rounded text-xs text-gray-300 whitespace-pre-wrap max-h-60 overflow-y-auto border border-[#2A2A2F]">
-                {typeof data.output === 'string' ? data.output : JSON.stringify(data.output, null, 2)}
+                {(() => {
+                  const displayOutput = data.output || output?.output || output?.text || (output ? JSON.stringify(output) : '');
+                  return typeof displayOutput === 'string' ? displayOutput : JSON.stringify(displayOutput, null, 2);
+                })()}
               </div>
             ) : null}
           </div>

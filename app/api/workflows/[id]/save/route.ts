@@ -93,12 +93,24 @@ export async function POST(
             // These will be re-processed at execution time
             const config = { ...node.data };
             
-            // Don't save base64 data to DB - keep only URLs
-            // This drastically reduces save time and DB size
-            if (config.imageBase64 && config.imageUrl) {
-              delete config.imageBase64; // URL is sufficient, can fetch at runtime
+            // Strip ALL large base64 data to prevent transaction timeouts
+            // Video data URLs can be 10+ MB and cause 88s+ transaction times
+            if (config.videoUrl && config.videoUrl.startsWith('data:')) {
+              delete config.videoUrl; // Too large for DB, user must re-upload
             }
-            // Don't strip croppedImageUrl/extractedFrameUrl since those ARE the processed results
+            if (config.imageBase64) {
+              delete config.imageBase64; // Use imageUrl instead
+            }
+            // Keep extractedFrameUrl and croppedImageUrl - they're smaller after compression
+            // But strip if they're too large (> 500KB)
+            if (config.extractedFrameUrl && config.extractedFrameUrl.length > 500000) {
+              console.log('[SAVE] Stripping large extractedFrameUrl:', config.extractedFrameUrl.length);
+              delete config.extractedFrameUrl;
+            }
+            if (config.croppedImageUrl && config.croppedImageUrl.length > 500000) {
+              console.log('[SAVE] Stripping large croppedImageUrl:', config.croppedImageUrl.length);
+              delete config.croppedImageUrl;
+            }
             
             // Debug logging for extract nodes
             if (node.type === 'extract') {
@@ -145,17 +157,38 @@ export async function POST(
       }
 
       // Update workflow with new definition
+      // Strip large base64 data from definition to avoid DB bloat
+      const cleanDefinition = {
+        ...definition,
+        nodes: definition.nodes?.map((node: any) => {
+          const cleanData = { ...node.data };
+          if (cleanData.videoUrl && cleanData.videoUrl.startsWith('data:')) {
+            delete cleanData.videoUrl;
+          }
+          if (cleanData.imageBase64) {
+            delete cleanData.imageBase64;
+          }
+          if (cleanData.extractedFrameUrl && cleanData.extractedFrameUrl.length > 500000) {
+            delete cleanData.extractedFrameUrl;
+          }
+          if (cleanData.croppedImageUrl && cleanData.croppedImageUrl.length > 500000) {
+            delete cleanData.croppedImageUrl;
+          }
+          return { ...node, data: cleanData };
+        }) || [],
+      };
+      
       return tx.workflow.update({
         where: { id: params.id },
         data: {
           name,
-          definition,
+          definition: cleanDefinition,
           updatedAt: new Date(),
         },
       });
     }, {
-      timeout: 60000, // 60 seconds timeout for slow remote databases
-      maxWait: 10000, // Wait up to 10s to acquire connection
+      timeout: 120000, // 120 seconds timeout for slow remote databases
+      maxWait: 15000, // Wait up to 15s to acquire connection
     });
 
     return NextResponse.json(updatedWorkflow);

@@ -350,18 +350,34 @@ export const useWorkflowStore = create<WorkflowState>((set, get) => ({
     set({ isSaving: true });
     
     try {
+      // Strip large base64 data before sending to API to prevent timeout
+      const cleanNodes = nodes.map(node => {
+        const cleanData = { ...node.data };
+        // Strip video base64 data URLs (can be 10+ MB)
+        if (cleanData.videoUrl && typeof cleanData.videoUrl === 'string' && cleanData.videoUrl.startsWith('data:')) {
+          delete cleanData.videoUrl;
+        }
+        // Strip image base64 if URL exists
+        if (cleanData.imageBase64) {
+          delete cleanData.imageBase64;
+        }
+        // We KEEP extractedFrameUrl and croppedImageUrl since they're needed for execution
+        // and should be smaller after compression
+        return {
+          id: node.id,
+          type: node.type,
+          position: node.position,
+          data: cleanData,
+        };
+      });
+      
       const response = await fetch(`/api/workflows/${idToUse}/save`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           name: workflowName,
           definition: {
-            nodes: nodes.map(node => ({
-              id: node.id,
-              type: node.type,
-              position: node.position,
-              data: node.data,
-            })),
+            nodes: cleanNodes,
             edges: edges.map(edge => ({
               id: edge.id,
               source: edge.source,
