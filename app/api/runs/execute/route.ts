@@ -151,7 +151,20 @@ export async function POST(req: Request) {
                 nodeInputs.images.push(val);
               }
             } else if (edge.targetHandle) {
-              nodeInputs[edge.targetHandle] = val;
+              // Fix: If input is an image, always add to images list regardless of handle name
+              if (isValidImage(val)) {
+                if (!nodeInputs.images) nodeInputs.images = [];
+                nodeInputs.images.push(val);
+                
+                // Only assign to the specific handle if it's NOT a base64 string
+                // This prevents polluting text prompts (system/user) with huge base64 data
+                if (!val.startsWith('data:') && val.length < 1000) {
+                  nodeInputs[edge.targetHandle] = val;
+                }
+              } else {
+                // Not an image (text, etc), assign to handle as usual
+                nodeInputs[edge.targetHandle] = val;
+              }
             } else {
               Object.assign(nodeInputs, parentOutput);
               if (parentOutput.image && isValidImage(parentOutput.image)) {

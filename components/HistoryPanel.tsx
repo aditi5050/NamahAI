@@ -95,7 +95,7 @@ export default function HistoryPanel({ workflowId }: HistoryPanelProps) {
   }
 
   return (
-    <aside className="w-80 bg-[#141418] border-l border-[#2A2A2F] h-full flex flex-col z-10 overflow-hidden">
+    <aside className="w-80 bg-[#141418] border-l border-[#2A2A2F] flex flex-col z-10" style={{ height: '100%', maxHeight: '100vh' }}>
       {/* Header */}
       <div className="flex-shrink-0 p-3 border-b border-[#2A2A2F] flex justify-between items-center bg-[#1A1A20]">
         <div className="flex items-center gap-2">
@@ -120,7 +120,10 @@ export default function HistoryPanel({ workflowId }: HistoryPanelProps) {
       )}
 
       {/* Content - Scrollable */}
-      <div className="flex-1 min-h-0 overflow-y-auto">
+      <div 
+        className="flex-1 overflow-y-auto"
+        style={{ minHeight: 0 }}
+      >
         {runs.length === 0 ? (
           <div className="flex flex-col items-center justify-center h-full text-center px-6">
             <div className="w-16 h-16 rounded-full bg-[#1A1A20] flex items-center justify-center mb-4">
@@ -202,9 +205,12 @@ export default function HistoryPanel({ workflowId }: HistoryPanelProps) {
                     </div>
                   </div>
                   
-                  {/* Expanded Node Details */}
+                  {/* Expanded Node Details - Scrollable */}
                   {isExpanded && run.nodeExecutions && run.nodeExecutions.length > 0 && (
-                    <div className="border-t border-[#2A2A2F] bg-[#16161A]">
+                    <div 
+                      className="border-t border-[#2A2A2F] bg-[#16161A] overflow-y-auto"
+                      style={{ maxHeight: '250px' }}
+                    >
                       <div className="p-2 space-y-1">
                         {run.nodeExecutions.map((nodeExec: any, index: number) => (
                           <NodeExecutionItem 
@@ -225,7 +231,7 @@ export default function HistoryPanel({ workflowId }: HistoryPanelProps) {
       
       {/* Footer */}
       {runs.length > 0 && (
-        <div className="p-3 border-t border-[#2A2A2F] bg-[#1A1A20]">
+        <div className="flex-shrink-0 p-3 border-t border-[#2A2A2F] bg-[#1A1A20]">
           <div className="text-xs text-gray-500 text-center">
             Showing {runs.length} recent execution{runs.length !== 1 ? 's' : ''}
           </div>
