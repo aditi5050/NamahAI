@@ -146,7 +146,7 @@ export default function Navbar() {
       </div>
       <a
         id="try_now_top"
-        href="https://app.weavy.ai/signin"
+        href="/signin"
         className="huge_nav-button is-real w-variant-138f51c6-a923-3c01-fe1a-d27a5c95ed04 w-inline-block"
       >
         <div className="nav-button-spacer"></div>
