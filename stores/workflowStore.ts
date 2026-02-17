@@ -61,6 +61,9 @@ interface WorkflowState {
   // Persistence
   setWorkflowId: (id: string) => void;
   saveWorkflow: () => void;
+  saveToDatabase: () => Promise<boolean>;
+  isSaving: boolean;
+  isSaved: boolean;
   loadWorkflow: (id: string) => void;
   loadSampleWorkflow: () => void;
   getWorkflowList: () => Workflow[];
@@ -125,20 +128,24 @@ export const useWorkflowStore = create<WorkflowState>((set, get) => ({
   edges: [],
   history: [],
   historyIndex: -1,
+  isSaving: false,
+  isSaved: false,
 
   setWorkflowId: (id) => set({ workflowId: id }),
-  setNodes: (nodes) => set({ nodes }),
-  setEdges: (edges) => set({ edges }),
+  setNodes: (nodes) => set({ nodes, isSaved: false }),
+  setEdges: (edges) => set({ edges, isSaved: false }),
 
   onNodesChange: (changes) => {
     set({
       nodes: applyNodeChanges(changes, get().nodes as any) as any,
+      isSaved: false,
     });
   },
 
   onEdgesChange: (changes) => {
     set({
       edges: applyEdgeChanges(changes, get().edges),
+      isSaved: false,
     });
   },
 
@@ -315,14 +322,61 @@ export const useWorkflowStore = create<WorkflowState>((set, get) => ({
   canRedo: () => get().historyIndex < get().history.length - 1,
 
   saveWorkflow: () => {
-    // This function is for localStorage. 
-    // In our new architecture, we save to DB via API in the component.
-    // But we can keep local backup or remove this.
-    // Let's keep it simple for now and just update the store state if needed.
-    
-    // Actually, let's keep the localStorage implementation as a backup or for "offline" mode
+    // Trigger the async save
+    get().saveToDatabase();
+  },
+
+  saveToDatabase: async () => {
     const { workflowId, workflowName, nodes, edges } = get();
-    // Logic moved to component or we can add API call here later.
+    
+    // Generate a proper UUID if we have the default ID
+    let idToUse = workflowId;
+    if (workflowId === 'workflow_default' || !workflowId) {
+      idToUse = crypto.randomUUID();
+      set({ workflowId: idToUse });
+    }
+
+    set({ isSaving: true });
+    
+    try {
+      const response = await fetch(`/api/workflows/${idToUse}/save`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: workflowName,
+          definition: {
+            nodes: nodes.map(node => ({
+              id: node.id,
+              type: node.type,
+              position: node.position,
+              data: node.data,
+            })),
+            edges: edges.map(edge => ({
+              id: edge.id,
+              source: edge.source,
+              target: edge.target,
+              sourceHandle: edge.sourceHandle,
+              targetHandle: edge.targetHandle,
+            })),
+          },
+        }),
+      });
+
+      if (response.ok) {
+        set({ isSaving: false, isSaved: true });
+        console.log('[WorkflowStore] Workflow saved successfully:', idToUse);
+        return true;
+      } else {
+        const error = await response.text();
+        console.error('[WorkflowStore] Failed to save workflow:', error);
+        set({ isSaving: false });
+        return false;
+      }
+    } catch (error) {
+      console.error('[WorkflowStore] Error saving workflow:', error);
+      set({ isSaving: false });
+      return false;
+    }
   },
 
   loadWorkflow: (id) => {

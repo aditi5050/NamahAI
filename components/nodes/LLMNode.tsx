@@ -8,7 +8,6 @@ import {
   useNodeDuration,
 } from "@/hooks/useNodeStatus";
 import { useWorkflowStore } from "@/stores/workflowStore";
-import { useWorkflowRuntimeStore } from "@/stores/workflowRuntimeStore";
 
 const MODELS = [
   { value: "gemini-2.5-flash", label: "Gemini 2.5 Flash" },
@@ -19,7 +18,8 @@ const MODELS = [
 export function LLMNode({ id, data, selected }: NodeProps) {
   const { getNodes, getEdges, setNodes } = useReactFlow();
   const workflowId = useWorkflowStore((state) => state.workflowId);
-  const startSingleNodeRun = useWorkflowRuntimeStore((state) => state.startSingleNodeRun);
+  const isSaved = useWorkflowStore((state) => state.isSaved);
+  const saveToDatabase = useWorkflowStore((state) => state.saveToDatabase);
   const status = useNodeStatus(id);
   const output = useNodeOutput(id);
   const error = useNodeError(id);
@@ -136,24 +136,17 @@ export function LLMNode({ id, data, selected }: NodeProps) {
         return;
       }
 
-      // Try to run via workflow system (creates history) if workflow is saved
-      if (workflowId && workflowId !== 'workflow_default') {
-        try {
-          await startSingleNodeRun(workflowId, id, {
-            prompt: finalPrompt,
-            systemPrompt: data.systemPrompt,
-            model: data.model,
-          });
-          // The runtime store will update node status/output via SSE
-          updateData({ isLoading: false });
-          return;
-        } catch (err) {
-          // Workflow not saved or node not in DB, fall back to direct API
-          console.log('[LLMNode] Falling back to direct API call:', err);
+      // Auto-save workflow to database for history tracking
+      let currentWorkflowId = workflowId;
+      if (!isSaved || workflowId === 'workflow_default') {
+        console.log('[LLMNode] Auto-saving workflow before run...');
+        const saved = await saveToDatabase();
+        if (saved) {
+          currentWorkflowId = useWorkflowStore.getState().workflowId;
         }
       }
 
-      // Direct API call (no history, but works without saving)
+      // Always use direct API for immediate response display
       const response = await fetch('/api/gemini', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -185,7 +178,7 @@ export function LLMNode({ id, data, selected }: NodeProps) {
         isLoading: false,
       });
     }
-  }, [workflowId, id, data.prompt, data.systemPrompt, data.model, startSingleNodeRun, updateData, collectInputs]);
+  }, [workflowId, id, data.prompt, data.systemPrompt, data.model, isSaved, saveToDatabase, updateData, collectInputs]);
 
   return (
     <div

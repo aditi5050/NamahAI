@@ -1,6 +1,6 @@
 import { useWorkflowRuntimeStore } from "@/stores/workflowRuntimeStore";
 import { useEffect } from "react";
-import { useWorkflowEditorStore } from "@/stores/workflowEditorStore";
+import { useWorkflowStore } from "@/stores/workflowStore";
 
 export function useNodeStatus(nodeId: string) {
   const status = useWorkflowRuntimeStore((state) => state.nodeStatuses[nodeId]);
@@ -9,7 +9,7 @@ export function useNodeStatus(nodeId: string) {
 
 export function useNodeOutput(nodeId: string) {
   const output = useWorkflowRuntimeStore((state) => state.nodeOutputs[nodeId]);
-  const updateNodeData = useWorkflowEditorStore((state) => state.updateNodeData);
+  const updateNodeData = useWorkflowStore((state) => state.updateNodeData);
 
   // Auto-update node data with output
   useEffect(() => {
@@ -29,7 +29,7 @@ export function useNodeOutput(nodeId: string) {
 
 export function useNodeError(nodeId: string) {
   const error = useWorkflowRuntimeStore((state) => state.nodeErrors[nodeId]);
-  const updateNodeData = useWorkflowEditorStore((state) => state.updateNodeData);
+  const updateNodeData = useWorkflowStore((state) => state.updateNodeData);
 
   // Auto-update node data with error
   useEffect(() => {

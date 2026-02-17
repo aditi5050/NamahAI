@@ -14,9 +14,10 @@ import {
     Connection,
 } from 'reactflow';
 import 'reactflow/dist/style.css';
-import { ZoomIn, ZoomOut, Maximize2, Lock, Unlock, Undo2, Redo2 } from 'lucide-react';
+import { ZoomIn, ZoomOut, Maximize2, Lock, Unlock, Undo2, Redo2, Save, Loader2, Play } from 'lucide-react';
 
 import { useWorkflowStore } from '@/stores/workflowStore';
+import { useWorkflowRuntimeStore } from '@/stores/workflowRuntimeStore';
 import { TextNode } from '@/components/nodes/TextNode';
 import { UploadImageNode } from '@/components/nodes/UploadImageNode';
 import { LLMNode } from '@/components/nodes/LLMNode';
@@ -39,11 +40,32 @@ interface CanvasProps {
 }
 
 const CanvasInner: React.FC<CanvasProps> = ({ onDragOver, onDrop }) => {
-    const { nodes, edges, onNodesChange, onEdgesChange, onConnect, setEdges, deleteNode, undo, redo, canUndo, canRedo } = useWorkflowStore();
+    const { nodes, edges, onNodesChange, onEdgesChange, onConnect, setEdges, deleteNode, undo, redo, canUndo, canRedo, saveToDatabase, isSaving, isSaved, workflowId } = useWorkflowStore();
+    const { startRun, isRunning } = useWorkflowRuntimeStore();
     const reactFlowWrapper = useRef<HTMLDivElement>(null);
     const { zoomIn, zoomOut, fitView } = useReactFlow();
     const [isLocked, setIsLocked] = useState(false);
     const edgeReconnectSuccessful = useRef(true);
+
+    // Handle save workflow
+    const handleSave = useCallback(async () => {
+        await saveToDatabase();
+    }, [saveToDatabase]);
+
+    // Handle run entire workflow
+    const handleRunWorkflow = useCallback(async () => {
+        // Save first if not saved
+        if (!isSaved) {
+            const saved = await saveToDatabase();
+            if (!saved) {
+                alert('Failed to save workflow. Please try again.');
+                return;
+            }
+        }
+        // Then run the workflow
+        const currentWorkflowId = useWorkflowStore.getState().workflowId;
+        await startRun(currentWorkflowId);
+    }, [isSaved, saveToDatabase, startRun]);
 
     // Handle edge reconnection start
     const onReconnectStart = useCallback(() => {
@@ -160,6 +182,23 @@ const CanvasInner: React.FC<CanvasProps> = ({ onDragOver, onDrop }) => {
                         title="Redo (Ctrl+Shift+Z)"
                     >
                         <Redo2 className="w-4 h-4" />
+                    </button>
+                    <div className="w-px h-4 bg-[#2a2a2a] mx-0.5" />
+                    <button 
+                        onClick={handleSave}
+                        disabled={isSaving || isSaved}
+                        className={`p-1.5 rounded transition-colors ${isSaved ? 'text-green-400 bg-green-400/10' : 'text-white/70 hover:text-white hover:bg-[#2a2a2a]'} disabled:opacity-50`}
+                        title={isSaved ? "Saved" : "Save Workflow (to database)"}
+                    >
+                        {isSaving ? <Loader2 className="w-4 h-4 animate-spin" /> : <Save className="w-4 h-4" />}
+                    </button>
+                    <button 
+                        onClick={handleRunWorkflow}
+                        disabled={isRunning || nodes.length === 0}
+                        className={`p-1.5 rounded transition-colors ${isRunning ? 'text-purple-400 bg-purple-400/10' : 'text-green-400 hover:text-green-300 hover:bg-green-400/10'} disabled:opacity-50`}
+                        title="Run Workflow"
+                    >
+                        {isRunning ? <Loader2 className="w-4 h-4 animate-spin" /> : <Play className="w-4 h-4" />}
                     </button>
                 </Panel>
 

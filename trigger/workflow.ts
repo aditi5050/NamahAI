@@ -254,7 +254,8 @@ export const workflowRunJob = task({
                     if (!fullPrompt) fullPrompt = "Explain this.";
 
                     if (images && images.length > 0) {
-                      const result = await llmTask.trigger({
+                      // Use triggerAndWait to get the actual result
+                      const result = await llmTask.triggerAndWait({
                         prompt: fullPrompt,
                         imageUrls: images,
                         model,
@@ -264,7 +265,8 @@ export const workflowRunJob = task({
                         text: result ?? "No output",
                       };
                     } else {
-                      const result = await llmTask.trigger({
+                      // Use triggerAndWait to get the actual result
+                      const result = await llmTask.triggerAndWait({
                         prompt: fullPrompt,
                         model,
                       });
@@ -283,7 +285,8 @@ export const workflowRunJob = task({
                       nodeInputs.image;
                     if (!cropUrl) throw new Error("No image URL provided");
 
-                    const cropResult = await cropImageTask.trigger({
+                    // Use triggerAndWait to get the actual result
+                    const cropResult = await cropImageTask.triggerAndWait({
                       imageUrl: cropUrl,
                       width: (node.config as any)?.width_percent,
                       height: (node.config as any)?.height_percent,
@@ -306,7 +309,8 @@ export const workflowRunJob = task({
                       nodeInputs.video;
                     if (!videoUrl) throw new Error("No video URL provided");
 
-                    const frameResult = await extractFrameTask.trigger({
+                    // Use triggerAndWait to get the actual result
+                    const frameResult = await extractFrameTask.triggerAndWait({
                       videoUrl,
                       timestamp: parseFloat(
                         (node.config as any)?.timestamp ||
@@ -356,13 +360,14 @@ export const workflowRunJob = task({
                 exec.outputs = output as any;
                 changed = true;
               } catch (error) {
-                console.error(`[WORKFLOW] Node ${node.id} failed:`, error);
+                const errorMsg = error instanceof Error ? error.message : String(error);
+                console.error(`[WORKFLOW] Node ${node.id} failed:`, errorMsg);
 
                 await prisma.nodeExecution.update({
                   where: { id: exec.id },
                   data: {
                     status: "FAILED",
-                    
+                    error: errorMsg,
                     completedAt: new Date(),
                   },
                 });
