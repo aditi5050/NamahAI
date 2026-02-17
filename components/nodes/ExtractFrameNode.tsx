@@ -16,7 +16,7 @@ export function ExtractFrameNode({ id, data, selected }: NodeProps) {
       )
     );
   }, [id, setNodes]);
-
+ // a little commit to trigger update of commits
   // Helper to delete this node from React Flow
   const deleteThisNode = useCallback(() => {
     setNodes((nodes) => nodes.filter((node) => node.id !== id));
