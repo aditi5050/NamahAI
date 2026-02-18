@@ -248,7 +248,7 @@ export const workflowRunJob = task({
                                     // Support both camelCase (from node data) and snake_case (from edges)
                                     const system = nodeInputs.system || nodeInputs.systemPrompt || nodeInputs.system_prompt;
                                     const userInput = nodeInputs.user || nodeInputs.user_message; // Input from connected node
-                                    const nodePrompt = nodeInputs.prompt; // Prompt from the node's own textarea
+                                    const nodePrompt = nodeInputs.userPrompt || nodeInputs.prompt; // Prompt from the node's own textarea
                                     
                                     // Combine connected user input and the node's own prompt
                                     let combinedUserPrompt = "";
