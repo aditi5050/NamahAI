@@ -37,8 +37,7 @@ export async function GET(
     const customReadable = new ReadableStream({
       async start(controller) {
         let isStreamClosed = false;
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        let interval: any = null;
+        let interval: NodeJS.Timeout | null = null;
 
         const closeStream = () => {
             if (!isStreamClosed) {
@@ -187,7 +186,9 @@ export async function GET(
               // Wait slightly before closing to ensure client receives the message
               setTimeout(() => closeStream(), 1000);
               // Clear interval immediately to prevent further polling
-              clearInterval(interval);
+              if (interval) {
+                clearInterval(interval);
+              }
             }
           } catch (error) {
             console.error("[SSE_ERROR]", error);
