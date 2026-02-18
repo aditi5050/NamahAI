@@ -7,15 +7,17 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "worker": "npx trigger.dev@latest dev"
+    "worker": "npx trigger.dev@latest dev",
+    "workerstart": "npx trigger.dev@latest start"
   },
   "dependencies": {
     "@clerk/nextjs": "^6.37.3",
     "@google/generative-ai": "^0.24.1",
     "@prisma/adapter-pg": "^7.4.0",
     "@prisma/client": "^7.4.0",
-    "@trigger.dev/react": "4.3.3",
-    "@trigger.dev/sdk": "4.3.3",
+    "@trigger.dev/nextjs": "^3.3.12",
+    "@trigger.dev/react": "^3.3.12",
+    "@trigger.dev/sdk": "^3.3.17",
     "@types/pg": "^8.16.0",
     "@types/uuid": "^10.0.0",
     "@xyflow/react": "^12.10.0",
