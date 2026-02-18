@@ -29,15 +29,42 @@ export interface LLMNodeData {
   [key: string]: unknown;
 }
 
+export interface CropNodeData {
+  label: string;
+  x_percent: number;
+  y_percent: number;
+  width_percent: number;
+  height_percent: number;
+  imageUrl: string | null;
+  [key: string]: unknown;
+}
+
+export interface ExtractNodeData {
+  label: string;
+  timestamp: string;
+  videoUrl: string | null;
+  [key: string]: unknown;
+}
+
+export interface VideoNodeData {
+  label: string;
+  videoUrl: string | null;
+  fileName: string | null;
+  [key: string]: unknown;
+}
+
 // Union type for all node data
-export type WorkflowNodeData = TextNodeData | ImageNodeData | LLMNodeData;
+export type WorkflowNodeData = TextNodeData | ImageNodeData | LLMNodeData | CropNodeData | ExtractNodeData | VideoNodeData;
 
 // Custom node types
 export type TextNode = Node<TextNodeData, "text">;
 export type ImageNode = Node<ImageNodeData, "image">;
 export type LLMNode = Node<LLMNodeData, "llm">;
+export type CropNode = Node<CropNodeData, "crop">;
+export type ExtractNode = Node<ExtractNodeData, "extract">;
+export type VideoNode = Node<VideoNodeData, "video">;
 
-export type WorkflowNode = TextNode | ImageNode | LLMNode;
+export type WorkflowNode = TextNode | ImageNode | LLMNode | CropNode | ExtractNode | VideoNode;
 
 // Workflow state
 export interface Workflow {

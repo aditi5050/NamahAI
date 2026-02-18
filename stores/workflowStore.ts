@@ -415,156 +415,155 @@ export const useWorkflowStore = create<WorkflowState>((set, get) => ({
   },
 
   loadSampleWorkflow: () => {
+    // Generate IDs for nodes
+    const id_img = generateId();
+    const id_crop = generateId();
+    const id_txt_sys1 = generateId();
+    const id_txt_prod = generateId();
+    const id_llm1 = generateId();
+    const id_vid = generateId();
+    const id_extract = generateId();
+    const id_txt_sys2 = generateId();
+    const id_llm2 = generateId();
+
     const sampleNodes: WorkflowNode[] = [
-      // Input nodes
+      // Branch A: Image Processing + Product Description
       {
-        id: "img_product",
+        id: id_img,
         type: "image",
-        position: { x: 50, y: 150 },
+        position: { x: 50, y: 50 },
         data: {
-          label: "Product Photo",
-          imageUrl: "/images/cetaphil-sample.jpg",
+          label: "Upload Product Photo",
+          imageUrl: null,
           imageBase64: null,
         },
       },
       {
-        id: "text_specs",
+        id: id_crop,
+        type: "crop",
+        position: { x: 50, y: 300 },
+        data: {
+          label: "Crop to Product",
+          x_percent: 10,
+          y_percent: 10,
+          width_percent: 80,
+          height_percent: 80,
+          imageUrl: null,
+        },
+      },
+      {
+        id: id_txt_sys1,
         type: "text",
-        position: { x: 50, y: 400 },
+        position: { x: 300, y: 50 },
         data: {
-          label: "Product Name & Specs",
-          content:
-            "Cetaphil Paraben, Sulphate-Free Gentle Skin Hydrating Face Wash Cleanser with Niacinamide, Vitamin B5 for Dry to Normal, Sensitive Skin - 125ml",
+          label: "System Prompt (Copywriter)",
+          content: "You are a professional marketing copywriter. Generate a compelling one-paragraph product description.",
         },
       },
-      // Main analysis LLM
       {
-        id: "llm_analyze",
-        type: "llm",
-        position: { x: 450, y: 200 },
+        id: id_txt_prod,
+        type: "text",
+        position: { x: 300, y: 200 },
         data: {
-          label: "Analyze Product",
+          label: "Product Details",
+          content: "Product: Wireless Bluetooth Headphones. Features: Noise cancellation, 30-hour battery, foldable design.",
+        },
+      },
+      {
+        id: id_llm1,
+        type: "llm",
+        position: { x: 300, y: 450 },
+        data: {
+          label: "Generate Description",
           model: "gemini-2.5-flash",
-          systemPrompt:
-            "You are a product analyst. Analyze the product image and specifications provided.",
-          userPrompt:
-            "Analyze this product and provide key selling points and target audience.",
+          systemPrompt: "",
+          userPrompt: "",
           response: null,
           generatedImage: null,
           isLoading: false,
           error: null,
+          imageInputCount: 1,
         },
       },
-      // Content generation LLMs
+      
+      // Branch B: Video Frame Extraction
       {
-        id: "llm_instagram",
-        type: "llm",
-        position: { x: 900, y: 50 },
+        id: id_vid,
+        type: "video",
+        position: { x: 600, y: 50 },
         data: {
-          label: "Write Instagram Caption",
-          model: "gemini-2.5-flash",
-          systemPrompt: "Write Instagram caption for the described product.",
-          userPrompt:
-            "Create an engaging Instagram caption for this product with relevant hashtags.",
+          label: "Upload Demo Video",
+          videoUrl: null,
+          fileName: null,
+        },
+      },
+      {
+        id: id_extract,
+        type: "extract",
+        position: { x: 600, y: 300 },
+        data: {
+          label: "Extract Frame",
+          timestamp: "50%",
+          videoUrl: null,
+        },
+      },
+
+      // Convergence Point
+      {
+        id: id_txt_sys2,
+        type: "text",
+        position: { x: 500, y: 600 },
+        data: {
+          label: "System Prompt (Social Media)",
+          content: "You are a social media manager. Create a tweet-length marketing post based on the product image and video frame.",
+        },
+      },
+      {
+        id: id_llm2,
+        type: "llm",
+        position: { x: 500, y: 800 },
+        data: {
+          label: "Final Marketing Post",
+          model: "gemini-2.5-pro",
+          systemPrompt: "",
+          userPrompt: "",
           response: null,
           generatedImage: null,
           isLoading: false,
           error: null,
-        },
-      },
-      {
-        id: "llm_seo",
-        type: "llm",
-        position: { x: 900, y: 320 },
-        data: {
-          label: "Write SEO Meta Description",
-          model: "gemini-2.5-flash",
-          systemPrompt: "Write SEO meta description for the described product.",
-          userPrompt:
-            "Write an SEO-optimized meta description (under 160 characters) for this product.",
-          response: null,
-          generatedImage: null,
-          isLoading: false,
-          error: null,
-        },
-      },
-      {
-        id: "llm_amazon",
-        type: "llm",
-        position: { x: 900, y: 590 },
-        data: {
-          label: "Write Amazon Listing",
-          model: "gemini-2.5-flash",
-          systemPrompt: "Write Amazon listing for the following described product.",
-          userPrompt:
-            "Based on the product analysis, write a compelling Amazon product listing with title, bullet points, and description.",
-          response: null,
-          generatedImage: null,
-          isLoading: false,
-          error: null,
+          imageInputCount: 2,
         },
       },
     ];
 
     const sampleEdges: Edge[] = [
-      // Image → LLM Analyze (Image input)
-      {
-        id: "e1",
-        source: "img_product",
-        target: "llm_analyze",
-        targetHandle: "image-0",
-        animated: true,
-        style: { stroke: "#34d399", strokeWidth: 2 },
-      },
-      // Text Specs → LLM Analyze (Prompt input)
-      {
-        id: "e2",
-        source: "text_specs",
-        target: "llm_analyze",
-        targetHandle: "prompt",
-        animated: true,
-        style: { stroke: "#c084fc", strokeWidth: 2 },
-      },
-      // LLM Analyze → Write Amazon (Prompt input)
-      {
-        id: "e3",
-        source: "llm_analyze",
-        sourceHandle: "output",
-        target: "llm_amazon",
-        targetHandle: "prompt",
-        animated: true,
-        style: { stroke: "#c084fc", strokeWidth: 2 },
-      },
-      // LLM Analyze → Write Instagram (Prompt input)
-      {
-        id: "e4",
-        source: "llm_analyze",
-        sourceHandle: "output",
-        target: "llm_instagram",
-        targetHandle: "prompt",
-        animated: true,
-        style: { stroke: "#c084fc", strokeWidth: 2 },
-      },
-      // LLM Analyze → Write SEO (Prompt input)
-      {
-        id: "e5",
-        source: "llm_analyze",
-        sourceHandle: "output",
-        target: "llm_seo",
-        targetHandle: "prompt",
-        animated: true,
-        style: { stroke: "#c084fc", strokeWidth: 2 },
-      },
+      // Branch A Connections
+      { id: generateId(), source: id_img, target: id_crop, sourceHandle: "output", targetHandle: "image-input", animated: true, style: { stroke: "#444", strokeWidth: 2 } },
+      { id: generateId(), source: id_crop, target: id_llm1, sourceHandle: "output", targetHandle: "image-0", animated: true, style: { stroke: "#444", strokeWidth: 2 } },
+      { id: generateId(), source: id_txt_sys1, target: id_llm1, sourceHandle: "output", targetHandle: "system_prompt", animated: true, style: { stroke: "#444", strokeWidth: 2 } },
+      { id: generateId(), source: id_txt_prod, target: id_llm1, sourceHandle: "output", targetHandle: "user_message", animated: true, style: { stroke: "#444", strokeWidth: 2 } },
+
+      // Branch B Connections
+      { id: generateId(), source: id_vid, target: id_extract, sourceHandle: "output", targetHandle: "video_url", animated: true, style: { stroke: "#444", strokeWidth: 2 } },
+
+      // Convergence Connections
+      { id: generateId(), source: id_txt_sys2, target: id_llm2, sourceHandle: "output", targetHandle: "system_prompt", animated: true, style: { stroke: "#444", strokeWidth: 2 } },
+      { id: generateId(), source: id_llm1, target: id_llm2, sourceHandle: "output", targetHandle: "user_message", animated: true, style: { stroke: "#444", strokeWidth: 2 } },
+      { id: generateId(), source: id_crop, target: id_llm2, sourceHandle: "output", targetHandle: "image-0", animated: true, style: { stroke: "#444", strokeWidth: 2 } },
+      { id: generateId(), source: id_extract, target: id_llm2, sourceHandle: "output", targetHandle: "image-1", animated: true, style: { stroke: "#444", strokeWidth: 2 } },
     ];
 
     set({
-      workflowId: "sample_product_listing",
-      workflowName: "Product Listing Generator",
       nodes: sampleNodes,
       edges: sampleEdges,
+      workflowName: "Product Marketing Kit (Sample)",
       history: [],
       historyIndex: -1,
+      isSaved: false, // Trigger auto-save
     });
+    
+    // Explicitly trigger save to persist the new data
+    get().saveWorkflow();
   },
 
   exportWorkflow: () => {

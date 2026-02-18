@@ -200,6 +200,20 @@ const Sidebar: React.FC<SidebarProps> = ({ onDragStart }) => {
                                 </div>
                             )}
                         </div>
+
+                        <div className="mt-6 pt-6 border-t border-[#2a2a2a]">
+                            <button
+                                onClick={() => {
+                                    if (confirm("This will overwrite your current workflow with the sample data. Are you sure?")) {
+                                        loadSampleWorkflow();
+                                    }
+                                }}
+                                className="w-full flex items-center justify-center gap-2 bg-[#2a2a2a] text-white py-3 rounded-lg text-xs font-bold hover:bg-[#3a3a3a] transition-colors border border-[#3a3a3a]"
+                            >
+                                <Sparkles className="w-3.5 h-3.5 text-[#e5c100]" />
+                                Load Sample Workflow
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
