@@ -445,7 +445,7 @@ export const useWorkflowStore = create<WorkflowState>((set, get) => ({
       {
         id: id_crop,
         type: "crop",
-        position: { x: 50, y: 300 },
+        position: { x: 300, y: 50 },
         data: {
           label: "Crop to Product",
           x_percent: 10,
@@ -458,7 +458,7 @@ export const useWorkflowStore = create<WorkflowState>((set, get) => ({
       {
         id: id_txt_sys1,
         type: "text",
-        position: { x: 300, y: 50 },
+        position: { x: 550, y: 50 },
         data: {
           label: "System Prompt (Copywriter)",
           content: "You are a professional marketing copywriter. Generate a compelling one-paragraph product description.",
@@ -467,7 +467,7 @@ export const useWorkflowStore = create<WorkflowState>((set, get) => ({
       {
         id: id_txt_prod,
         type: "text",
-        position: { x: 300, y: 200 },
+        position: { x: 550, y: 200 },
         data: {
           label: "Product Details",
           content: "Product: Wireless Bluetooth Headphones. Features: Noise cancellation, 30-hour battery, foldable design.",
@@ -476,12 +476,12 @@ export const useWorkflowStore = create<WorkflowState>((set, get) => ({
       {
         id: id_llm1,
         type: "llm",
-        position: { x: 300, y: 450 },
+        position: { x: 800, y: 125 },
         data: {
           label: "Generate Description",
           model: "gemini-2.5-flash",
           systemPrompt: "",
-          userPrompt: "",
+          userPrompt: "Generate a compelling one-paragraph product description based on the provided product details and image.",
           response: null,
           generatedImage: null,
           isLoading: false,
@@ -494,7 +494,7 @@ export const useWorkflowStore = create<WorkflowState>((set, get) => ({
       {
         id: id_vid,
         type: "video",
-        position: { x: 600, y: 50 },
+        position: { x: 50, y: 400 },
         data: {
           label: "Upload Demo Video",
           videoUrl: null,
@@ -504,7 +504,7 @@ export const useWorkflowStore = create<WorkflowState>((set, get) => ({
       {
         id: id_extract,
         type: "extract",
-        position: { x: 600, y: 300 },
+        position: { x: 300, y: 400 },
         data: {
           label: "Extract Frame",
           timestamp: "50%",
@@ -516,7 +516,7 @@ export const useWorkflowStore = create<WorkflowState>((set, get) => ({
       {
         id: id_txt_sys2,
         type: "text",
-        position: { x: 500, y: 600 },
+        position: { x: 550, y: 550 },
         data: {
           label: "System Prompt (Social Media)",
           content: "You are a social media manager. Create a tweet-length marketing post based on the product image and video frame.",
@@ -525,12 +525,12 @@ export const useWorkflowStore = create<WorkflowState>((set, get) => ({
       {
         id: id_llm2,
         type: "llm",
-        position: { x: 500, y: 800 },
+        position: { x: 800, y: 550 },
         data: {
           label: "Final Marketing Post",
           model: "gemini-2.5-pro",
           systemPrompt: "",
-          userPrompt: "",
+          userPrompt: "Create a tweet-length marketing post based on the product description, product image, and video frame. Include relevant hashtags.",
           response: null,
           generatedImage: null,
           isLoading: false,
@@ -542,19 +542,19 @@ export const useWorkflowStore = create<WorkflowState>((set, get) => ({
 
     const sampleEdges: Edge[] = [
       // Branch A Connections
-      { id: generateId(), source: id_img, target: id_crop, sourceHandle: "output", targetHandle: "image-input", animated: true, style: { stroke: "#444", strokeWidth: 2 } },
-      { id: generateId(), source: id_crop, target: id_llm1, sourceHandle: "output", targetHandle: "image-0", animated: true, style: { stroke: "#444", strokeWidth: 2 } },
-      { id: generateId(), source: id_txt_sys1, target: id_llm1, sourceHandle: "output", targetHandle: "system_prompt", animated: true, style: { stroke: "#444", strokeWidth: 2 } },
-      { id: generateId(), source: id_txt_prod, target: id_llm1, sourceHandle: "output", targetHandle: "user_message", animated: true, style: { stroke: "#444", strokeWidth: 2 } },
+      { id: generateId(), source: id_img, target: id_crop, sourceHandle: "output", targetHandle: "image_url", animated: true, style: { stroke: "#444", strokeWidth: 2 } },
+      { id: generateId(), source: id_crop, target: id_llm1, sourceHandle: "output", targetHandle: "images", animated: true, style: { stroke: "#444", strokeWidth: 2 } },
+      { id: generateId(), source: id_txt_sys1, target: id_llm1, sourceHandle: "output", targetHandle: "system", animated: true, style: { stroke: "#444", strokeWidth: 2 } },
+      { id: generateId(), source: id_txt_prod, target: id_llm1, sourceHandle: "output", targetHandle: "user", animated: true, style: { stroke: "#444", strokeWidth: 2 } },
 
       // Branch B Connections
       { id: generateId(), source: id_vid, target: id_extract, sourceHandle: "output", targetHandle: "video_url", animated: true, style: { stroke: "#444", strokeWidth: 2 } },
 
       // Convergence Connections
-      { id: generateId(), source: id_txt_sys2, target: id_llm2, sourceHandle: "output", targetHandle: "system_prompt", animated: true, style: { stroke: "#444", strokeWidth: 2 } },
-      { id: generateId(), source: id_llm1, target: id_llm2, sourceHandle: "output", targetHandle: "user_message", animated: true, style: { stroke: "#444", strokeWidth: 2 } },
-      { id: generateId(), source: id_crop, target: id_llm2, sourceHandle: "output", targetHandle: "image-0", animated: true, style: { stroke: "#444", strokeWidth: 2 } },
-      { id: generateId(), source: id_extract, target: id_llm2, sourceHandle: "output", targetHandle: "image-1", animated: true, style: { stroke: "#444", strokeWidth: 2 } },
+      { id: generateId(), source: id_txt_sys2, target: id_llm2, sourceHandle: "output", targetHandle: "system", animated: true, style: { stroke: "#444", strokeWidth: 2 } },
+      { id: generateId(), source: id_llm1, target: id_llm2, sourceHandle: "output", targetHandle: "user", animated: true, style: { stroke: "#444", strokeWidth: 2 } },
+      { id: generateId(), source: id_crop, target: id_llm2, sourceHandle: "output", targetHandle: "images", animated: true, style: { stroke: "#444", strokeWidth: 2 } },
+      { id: generateId(), source: id_extract, target: id_llm2, sourceHandle: "output", targetHandle: "images", animated: true, style: { stroke: "#444", strokeWidth: 2 } },
     ];
 
     set({

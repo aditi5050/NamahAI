@@ -54,7 +54,7 @@ export function LLMNode({ id, data, selected }: NodeProps) {
 
   const onPromptChange = useCallback(
     (evt: React.ChangeEvent<HTMLTextAreaElement>) => {
-      updateData({ prompt: evt.target.value });
+      updateData({ userPrompt: evt.target.value });
     },
     [updateData]
   );
@@ -260,7 +260,7 @@ export function LLMNode({ id, data, selected }: NodeProps) {
             className="w-full px-2 py-1 text-xs border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#6F42C1] min-h-[60px] resize-y bg-white text-black placeholder-gray-400"
             placeholder="Enter your prompt here..."
             style={{ color: '#000000' }}
-            value={data.prompt || ''}
+            value={data.userPrompt || data.prompt || ''}
             onChange={onPromptChange}
             disabled={data.isLoading}
           />
