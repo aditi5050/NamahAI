@@ -70,7 +70,7 @@ export default function Navbar() {
               <div className="banner_content w-variant-138f51c6-a923-3c01-fe1a-d27a5c95ed04">
                 <div className="banner_rich-text w-variant-138f51c6-a923-3c01-fe1a-d27a5c95ed04 w-richtext">
                   <p>
-                    <strong>Weavy is now a part of Figma</strong>
+                    <strong>NamahAi is now a part of Figma</strong>
                   </p>
                 </div>
               </div>
